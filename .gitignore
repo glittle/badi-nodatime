@@ -1,0 +1,50 @@
+# Editor backups and temporary files
+*~
+*.bak
+*.swp
+
+# IDE-generated files
+*.suo
+*.user
+*.sln.cache
+.vs
+.vscode
+
+# IDE add-ins
+*.dotCover
+*.ncrunchproject
+*.ncrunchsolution
+_NCrunch*
+.resharper
+*.ReSharper
+_ReSharper*
+StyleCop.Cache
+.cr
+
+# Auto-created thumbnails
+Thumbs.db
+
+# Build output directories (anywhere)
+**/bin/
+**/obj/
+
+# NUnit output
+TestResult.xml
+
+# Output from build steps
+/build/tmp/**
+
+# Sandcastle per-user settings
+/build/NodaTime.shfbproj_*
+/build/NodaTime-Pcl.shfbproj_*
+
+# Temporary build output directories
+/build/tmp
+/build/releasebuild
+
+# Roslyn temporary files
+/src/*.sln.ide/**
+
+# BenchmarkDotNet output
+BenchmarkDotNet.Artifacts
+
