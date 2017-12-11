@@ -12,10 +12,10 @@ namespace WondrousNodaTime.Test
     public void ToWondrousString_Default()
     {
       // ensure that this helper method is working
-      Assert.AreEqual(Wondrous.CreateDate(180, 10, 10).ToWondrousString(), "180-10-10");
-      Assert.AreEqual(Wondrous.CreateDate(180, 18, 19).ToWondrousString(), "180-18-19");
-      Assert.AreEqual(Wondrous.CreateDate(180, 0, 3).ToWondrousString(), "180-0-3");
-      Assert.AreEqual(Wondrous.CreateDate(180, 19, 1).ToWondrousString(), "180-19-1");
+      Wondrous.CreateDate(180, 10, 10).ToWondrousString().ShouldEqual("180-10-10");
+      Wondrous.CreateDate(180, 18, 19).ToWondrousString().ShouldEqual("180-18-19");
+      Wondrous.CreateDate(180, 0, 3).ToWondrousString().ShouldEqual("180-0-3");
+      Wondrous.CreateDate(180, 19, 1).ToWondrousString().ShouldEqual("180-19-1");
     }
 
   }

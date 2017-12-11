@@ -31,5 +31,12 @@ namespace WondrousNodaTime
     /// <param name="input"></param>
     /// <returns></returns>
     public static int Day(this LocalDate input) => Wondrous.Day(input);
+
+    /// <summary>
+    /// Return the element of this Wondrous month or Ayyam-i-Ha.
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
+    public static int Element(this LocalDate input) => Wondrous.Element(input);
   }
 }

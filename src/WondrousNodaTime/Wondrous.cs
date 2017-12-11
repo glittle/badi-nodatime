@@ -65,5 +65,48 @@ namespace WondrousNodaTime
       }
       return input.Month;
     }
+
+    internal static int Element(LocalDate input) {
+      Checks.EnsureIsWondrousCalendar(nameof(input), input);
+      return Element(input.Month());
+    }
+    /// <summary>
+    /// Return the element of this Wondrous month or Ayyam-i-Ha.
+    /// </summary>
+    /// <param name="month"></param>
+    /// <remarks>
+    /// The Báb groups the 19 months of the year into four sections, named after the elements.
+    /// 
+    /// The name/description of these elements can be described as:
+    /// 
+    /// 1, 2, 3 - Fire
+    /// 4, 5, 6, 7 - Air
+    /// 8, 9,10,11,12,13 - Water
+    /// 14,15,16,17,18,19 - Earth
+    /// 
+    /// See 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false'
+    /// </remarks>
+    /// <returns></returns>
+    public static int Element(int month)
+    {
+      var element = 1;
+      if (month >= 4 && month <= 7)
+      {
+        element = 2;
+      }
+      else if (month >= 8 && month <= 13)
+      {
+        element = 3;
+      }
+      else if (month >= 14 && month <= 19)
+      {
+        element = 4;
+      }
+      else if (month == 0)
+      {
+        element = 0;
+      }
+      return element;
+    }
   }
 }

@@ -15,17 +15,31 @@ namespace WondrousNodaTime.Test
     [Test]
     public void CreateDate()
     {
-      Assert.AreEqual(Wondrous.CreateDate(180, 10, 10).ToWondrousString(), "180-10-10");
-      Assert.AreEqual(Wondrous.CreateDate(180, 18, 19).ToWondrousString(), "180-18-19");
-      Assert.AreEqual(Wondrous.CreateDate(180, 0, 3).ToWondrousString(), "180-0-3");
-      Assert.AreEqual(Wondrous.CreateDate(180, 19, 1).ToWondrousString(), "180-19-1");
+      Wondrous.CreateDate(180, 10, 10).ToWondrousString().ShouldEqual("180-10-10");
+      Wondrous.CreateDate(180, 18, 19).ToWondrousString().ShouldEqual("180-18-19");
+      Wondrous.CreateDate(180, 0, 3).ToWondrousString().ShouldEqual("180-0-3");
+      Wondrous.CreateDate(180, 19, 1).ToWondrousString().ShouldEqual("180-19-1");
     }
 
     [Test]
-    public void EnsureIsWondrous ()
+    public void EnsureIsWondrous()
     {
-      Assert.Throws<ArgumentException>(() => new LocalDate(2000,1,1).ToWondrousString());
+      Assert.Throws<ArgumentException>(() => new LocalDate(2000, 1, 1).ToWondrousString());
     }
 
-}
+    [Test]
+    [TestCase(0,0)]
+    [TestCase(1, 1)]
+    [TestCase(3, 1)]
+    [TestCase(4, 2)]
+    [TestCase(7, 2)]
+    [TestCase(8, 3)]
+    [TestCase(13, 3)]
+    [TestCase(14, 4)]
+    [TestCase(19, 4)]
+    public void ElementNumber(int month, int element)
+    {
+      Wondrous.Element(month).ShouldEqual(element);
+    }
+  }
 }
