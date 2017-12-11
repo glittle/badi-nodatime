@@ -1,4 +1,8 @@
-﻿using NodaTime;
+﻿// Copyright 2017 Glen Little. All rights reserved.
+// Use of this source code is governed by the Apache License 2.0,
+// as found in the LICENSE.txt file.
+
+using NodaTime;
 using WondrousNodaTime.Utility;
 
 namespace WondrousNodaTime
@@ -35,7 +39,7 @@ namespace WondrousNodaTime
     /// <summary>
     /// Return the day of this month, treating Ayyam-i-Ha as a separate month.
     /// </summary>
-    public static int Day(LocalDate input)
+    internal static int Day(LocalDate input)
     {
       Checks.EnsureIsWondrousCalendar(nameof(input), input);
 
@@ -50,7 +54,7 @@ namespace WondrousNodaTime
     /// <summary>
     /// Return the month of this date. If in Ayyam-i-Ha, returns 0.
     /// </summary>
-    public static int Month(LocalDate input)
+    internal static int Month(LocalDate input)
     {
       Checks.EnsureIsWondrousCalendar(nameof(input), input);
 
