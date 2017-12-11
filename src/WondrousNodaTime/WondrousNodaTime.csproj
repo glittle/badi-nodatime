@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Wondrous Noda Time is helper library using Noda Time to generate and display dates in the Wondrous calendar.</Description>
+    <AssemblyTitle>Wondrous Noda Time</AssemblyTitle>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <Authors>Glen Little</Authors>
+    <TargetFrameworks>net45;netstandard1.3</TargetFrameworks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- <AssemblyOriginatorKeyFile>../../NodaTime Release.snk</AssemblyOriginatorKeyFile> -->
+    <!-- <SignAssembly>true</SignAssembly> -->
+    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <PackageTags>date;calendar;nodatime;wondrous;badí;bahá'í</PackageTags>
+    <PackageProjectUrl>https://sites.google.com/site/badicalendartools/home/wondrous-noda-time</PackageProjectUrl>
+    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/glittle/wondrous-nodatime</RepositoryUrl>
+    <GenerateNeutralResourcesLanguageAttribute>false</GenerateNeutralResourcesLanguageAttribute>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <Deterministic>True</Deterministic>
+  </PropertyGroup>
+
+  <ItemGroup Label="dotnet pack instructions">
+    <Content Include="$(OutputPath)netstandard1.3\WondrousNodaTime.pdb">
+      <Pack>true</Pack>
+      <PackagePath>lib/netstandard1.3</PackagePath>
+    </Content>
+    <Content Include="$(OutputPath)net45\WondrousNodaTime.pdb">
+      <Pack>true</Pack>
+      <PackagePath>lib/net45</PackagePath>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <PackageReference Include="System.Runtime.Serialization.Xml" Version="4.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NodaTime">
+      <HintPath>..\..\LocalNodaTime\net45\NodaTime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

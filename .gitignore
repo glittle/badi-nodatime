@@ -34,10 +34,6 @@ TestResult.xml
 # Output from build steps
 /build/tmp/**
 
-# Sandcastle per-user settings
-/build/NodaTime.shfbproj_*
-/build/NodaTime-Pcl.shfbproj_*
-
 # Temporary build output directories
 /build/tmp
 /build/releasebuild
@@ -48,3 +44,5 @@ TestResult.xml
 # BenchmarkDotNet output
 BenchmarkDotNet.Artifacts
 
+# Temp files
+LocalNodaTime
