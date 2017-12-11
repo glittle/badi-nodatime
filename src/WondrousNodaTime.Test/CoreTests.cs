@@ -13,10 +13,8 @@ namespace WondrousNodaTime.Test
   {
 
     [Test]
-    public void HelperMethod_WondrousDay()
+    public void CreateDate_Day()
     {
-      Wondrous.CreateDate(180, 1, 1);
-
       // ensure that this helper method is working
       Assert.AreEqual(Wondrous.Day(Wondrous.CreateDate(180, 10, 10)), 10);
       Assert.AreEqual(Wondrous.Day(Wondrous.CreateDate(180, 18, 19)), 19);
@@ -25,7 +23,7 @@ namespace WondrousNodaTime.Test
     }
 
     [Test]
-    public void HelperMethod_WondrousMonth()
+    public void CreateDate_Month()
     {
       // ensure that this helper method is working
       Assert.AreEqual(Wondrous.Month(Wondrous.CreateDate(180, 10, 10)), 10);

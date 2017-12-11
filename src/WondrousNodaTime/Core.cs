@@ -1,8 +1,4 @@
 ﻿using NodaTime;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using WondrousNodaTime.Utility;
 
 namespace WondrousNodaTime
@@ -12,13 +8,11 @@ namespace WondrousNodaTime
   /// </summary>
   public static class Wondrous
   {
-    // For use with CreateWondrousDate, this is a notional "month"
-    // containing Ayyam-i-Ha. The days here are represented in month
-    // 18 in LocalDate etc.
-    const int AyyamiHaMonth = 0;
+    internal const int AyyamiHaMonth = 0;
+
+    internal const int DaysInMonth = 19;
 
     internal const int Month18 = 18;
-    internal const int DaysInMonth = 19;
 
     /// <summary>
     /// Create a <see cref="LocalDate"/> in the Wondrous calendar, treating 0
@@ -67,7 +61,5 @@ namespace WondrousNodaTime
       }
       return input.Month;
     }
-
-
   }
 }
