@@ -9,13 +9,13 @@ namespace WondrousNodaTime.Test
   class FormatterTest
   {
     [Test]
-    public void ToWondrousString_Default()
+    public void ToString_Default()
     {
       // ensure that this helper method is working
-      Wondrous.CreateDate(180, 10, 10).ToWondrousString().ShouldEqual("180-10-10");
-      Wondrous.CreateDate(180, 18, 19).ToWondrousString().ShouldEqual("180-18-19");
-      Wondrous.CreateDate(180, 0, 3).ToWondrousString().ShouldEqual("180-0-3");
-      Wondrous.CreateDate(180, 19, 1).ToWondrousString().ShouldEqual("180-19-1");
+      new WondrousDate(180, 10, 10).ToString().ShouldEqual("180-10-10");
+      new WondrousDate(180, 18, 19).ToString().ShouldEqual("180-18-19");
+      new WondrousDate(180, 0, 3).ToString().ShouldEqual("180-0-3");
+      new WondrousDate(180, 19, 1).ToString().ShouldEqual("180-19-1");
     }
 
   }

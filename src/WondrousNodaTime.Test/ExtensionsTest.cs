@@ -16,7 +16,7 @@ namespace WondrousNodaTime.Test
     public void ToWondrousString_Default(int year, int month, int day)
     {
       // ensure that this helper method is working
-      Wondrous.CreateDate(year, month, day).ToWondrousString().ShouldEqual($"{year}-{month}-{day}");
+      new WondrousDate(year, month, day).ToString().ShouldEqual($"{year}-{month}-{day}");
     }
 
 
@@ -27,7 +27,7 @@ namespace WondrousNodaTime.Test
     [TestCase(180, 19, 1)]
     public void CreateDate_Day(int year, int month, int day)
     {
-      Wondrous.CreateDate(year, month, day).Day().ShouldEqual(day);
+      new WondrousDate(year, month, day).Day.ShouldEqual(day);
     }
 
     [Test]
@@ -37,7 +37,7 @@ namespace WondrousNodaTime.Test
     [TestCase(180, 19, 1)]
     public void CreateDate_Month(int year, int month, int day)
     {
-      Wondrous.CreateDate(year, month, day).Month().ShouldEqual(month);
+      new WondrousDate(year, month, day).Month.ShouldEqual(month);
     }
 
   }
