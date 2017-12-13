@@ -3,10 +3,11 @@
 // as found in the LICENSE.txt file.
 
 using NUnit.Framework;
+using WondrousNodaTime.Utility;
 
 namespace WondrousNodaTime.Test
 {
-  class ExtensionsTest
+  class CreateTests
   {
     [Test]
     [TestCase(180, 10, 10)]

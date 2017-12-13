@@ -4,7 +4,6 @@
 
 using NodaTime;
 using System;
-using System.Globalization;
 
 namespace WondrousNodaTime
 {
@@ -136,7 +135,7 @@ namespace WondrousNodaTime
     {
       get
       {
-        return 1 + _date.Year - 19 * (Unity - 1);
+        return _date.Year - 19 * (Unity - 1);
       }
     }
 
@@ -150,6 +149,18 @@ namespace WondrousNodaTime
         return (int)Math.Floor(1 + (_date.Year - 1) / 19D);
       }
     }
+
+    /// <summary>
+    /// AllThings (Kull-i-Shay’)
+    /// </summary>
+    public int AllThings
+    {
+      get
+      {
+        return (int)Math.Floor(1 + (_date.Year - 1) / (19D * 19D));
+      }
+    }
+
 
     /// <summary>
     /// Return the element of the year.

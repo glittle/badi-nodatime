@@ -7,28 +7,52 @@ using System.Xml;
 
 namespace WondrousNodaTime.Utility
 {
-  internal class Checks
+  /// <summary>
+  /// Check for exceptional cases.
+  /// </summary>
+  /// <remarks>
+  /// Designed for internal use. Public to allow testing.
+  /// </remarks>
+  public class Checks
   {
-    internal static void EnsureIsWondrousCalendar(string paramName, LocalDate date)
+    /// <summary>
+    /// Throws exception if the date is not a Wondrous Calendar date
+    /// </summary>
+    /// <param name="date"></param>
+    /// <param name="paramName"></param>
+    public static void EnsureIsWondrousCalendar(LocalDate date, string paramName)
     {
       if (date.Calendar != CalendarSystem.Wondrous)
       {
         throw new ArgumentException("Can only be used with a LocalDate with the Wondrous calendar system", paramName);
       }
     }
-    public static void CheckNotNull<T>(T arg, string name)
+
+    /// <summary>
+    /// Throws exception if the arg is null
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="arg"></param>
+    /// <param name="paramName"></param>
+    public static void CheckNotNull<T>(T arg, string paramName)
     {
       if (arg == null)
       {
-        throw new ArgumentNullException(name);
+        throw new ArgumentNullException(paramName);
       }
     }
 
-    internal static void CheckArgument(bool expression, string parameter, string message)
+    /// <summary>
+    /// Throws exception if expression is false.
+    /// </summary>
+    /// <param name="expression"></param>
+    /// <param name="paramName"></param>
+    /// <param name="message"></param>
+    public static void CheckArgument(bool expression, string paramName, string message)
     {
       if (!expression)
       {
-        throw new ArgumentException(message, parameter);
+        throw new ArgumentException(message, paramName);
       }
     }
   }

@@ -3,13 +3,8 @@
 // as found in the LICENSE.txt file.
 
 using NodaTime;
-using NodaTime.Text;
 using System;
 using System.Globalization;
-using System.Runtime.Serialization;
-using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
 using WondrousNodaTime.Utility;
 
 namespace WondrousNodaTime
@@ -24,7 +19,7 @@ namespace WondrousNodaTime
     /// The value of the current instance in the default format pattern ("D"), using the current thread's
     /// culture to obtain a format provider.
     /// </returns>
-    public override string ToString() => new Formatter().Format(this, "d", CultureInfo.CurrentCulture);
+    public override string ToString() => new Formatter().Format(this, "D", CultureInfo.CurrentCulture);
 
     /// <summary>
     /// Formats the value of the current instance using the specified pattern.
@@ -54,6 +49,11 @@ namespace WondrousNodaTime
     /// <param name="other">An object to compare with this instance. </param>
     public int CompareTo(WondrousDate other) => LocalDate.CompareTo(other.LocalDate);
 
+    /// <summary>
+    /// Compare to another <see cref="LocalDate"/> 
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <returns></returns>
     public int CompareTo(object obj)
     {
       if (obj == null)
