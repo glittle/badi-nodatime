@@ -16,10 +16,23 @@ namespace WondrousNodaTime
     /// </summary>
     /// <param name="date"></param>
     /// <param name="dayType"></param>
-    public SpecialDay(WondrousDate date, SpecialDayEnum dayType) : this()
+    public SpecialDay(WondrousDate date, SpecialDayType dayType) : this()
     {
       Date = date;
       DayType = dayType;
+    }
+
+    /// <summary>
+    /// Create a special day with a code
+    /// </summary>
+    /// <param name="date"></param>
+    /// <param name="dayCode"></param>
+    /// <param name="dayType"></param>
+    public SpecialDay(WondrousDate date, HolyDayCode dayCode, SpecialDayType dayType) : this()
+    {
+      Date = date;
+      DayType = dayType;
+      DayCode = dayCode;
     }
 
     /// <summary>
@@ -29,28 +42,55 @@ namespace WondrousNodaTime
     /// <summary>
     /// The type of this special day
     /// </summary>
-    public SpecialDayEnum DayType { get; private set; }
+    public SpecialDayType DayType { get; private set; }
+
+    /// <summary>
+    /// The code for this day, if any
+    /// </summary>
+    public HolyDayCode DayCode { get; private set; }
+  }
+
+  /// <summary>
+  /// Holy Day Codes
+  /// </summary>
+  [Flags]
+  public enum HolyDayCode
+  {
+    _NoCode_ = 0,
+    NawRuz = 1,
+    Ridvan1 = 2,
+    Ridvan9 = 4,
+    Ridvan12 = 8,
+    AscBaha = 16,
+    DeclBab = 32,
+    Martrydom = 64,
+    BirthBab = 128,
+    BirthBaha = 256,
+    AscAbdul = 512,
+    Covenant = 1024
   }
 
   /// <summary>
   /// Types of special days
   /// </summary>
-  public enum SpecialDayEnum {
+  [Flags]
+  public enum SpecialDayType
+  {
     /// <summary>
     /// A Holy Day when work and school should be suspended
     /// </summary>
-    HolyDay_NoWork,
+    HolyDay_WorkSuspended = 1,
     /// <summary>
     /// A Holy Day not requiring suspension of work and school
     /// </summary>
-    HolyDay_Other,
+    HolyDay_Other = 2,
     /// <summary>
     /// The first day of a month
     /// </summary>
-    FeastDay,
+    FeastDay = 4,
     /// <summary>
     /// A day of fasting from sunrise to sunset
     /// </summary>
-    FastingDay
+    FastingDay = 8
   }
 }

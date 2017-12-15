@@ -4,14 +4,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace WondrousNodaTime.Utility
 {
   internal class Formatter
   {
-    public string Format(WondrousDate d, string patternText, IFormatProvider formatProvider)
+    public string DateFormat(WondrousDate d, string patternText, IFormatProvider formatProvider)
     {
-      return $"{d.YearOfEra}-{d.Month}-{d.Day}";
+      var g = d.WithCalendar(CalendarSystem.Gregorian);
+
+      if (string.IsNullOrWhiteSpace(patternText)){
+        patternText = "W";
+      }
+
+      return patternText.ReplaceTokens(
+        W => $"{d.YearOfEra}-{d.Month}-{d.Day}",
+        G => $"{g.Year}-{g.Month}-{g.Day}"
+      );
     }
+
+
   }
 }

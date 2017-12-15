@@ -17,5 +17,16 @@ namespace WondrousNodaTime.Test
     {
       new WondrousDate(year, month, day).ToString().ShouldEqual(result);
     }
+
+
+    [Test]
+    [TestCase(180, 10, 10, "2023-9-17")]
+    [TestCase(180, 18, 19, "2024-2-25")]
+    [TestCase(180, 0, 3, "2024-2-28")]
+    [TestCase(180, 19, 1, "2024-3-1")]
+    public void ToString_G(int year, int month, int day, string result)
+    {
+      new WondrousDate(year, month, day).ToString("{G}").ShouldEqual(result);
+    }
   }
 }

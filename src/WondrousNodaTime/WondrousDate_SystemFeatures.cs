@@ -19,7 +19,14 @@ namespace WondrousNodaTime
     /// The value of the current instance in the default format pattern ("D"), using the current thread's
     /// culture to obtain a format provider.
     /// </returns>
-    public override string ToString() => new Formatter().Format(this, "D", CultureInfo.CurrentCulture);
+    public override string ToString() => new Formatter().DateFormat(this, "{W}", CultureInfo.CurrentCulture);
+
+    /// <summary>
+    /// With pattern
+    /// </summary>
+    /// <param name="patternText"></param>
+    /// <returns></returns>
+    public string ToString(string patternText) => new Formatter().DateFormat(this, patternText, CultureInfo.CurrentCulture);
 
     /// <summary>
     /// Formats the value of the current instance using the specified pattern.
@@ -35,7 +42,7 @@ namespace WondrousNodaTime
     /// </param>
     /// <filterpriority>2</filterpriority>
     public string ToString(string patternText, IFormatProvider formatProvider) =>
-        new Formatter().Format(this, patternText, formatProvider);
+        new Formatter().DateFormat(this, patternText, formatProvider);
 
     /// <summary>
     /// Compares two <see cref="WondrousDate"/> values for equality. 
@@ -54,7 +61,7 @@ namespace WondrousNodaTime
     /// </summary>
     /// <param name="obj"></param>
     /// <returns></returns>
-    public int CompareTo(object obj)
+    int IComparable.CompareTo(object obj)
     {
       if (obj == null)
       {

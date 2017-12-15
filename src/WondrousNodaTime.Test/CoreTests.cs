@@ -22,10 +22,11 @@ namespace WondrousNodaTime.Test
     }
 
     [Test]
-    [Ignore("Result is volatile. Run manually and compare to outside authority.")]
-    public void CreateNow()
+    public void CreateDate_FromWondrousLocalDate()
     {
-      new WondrousDate().ToString().ShouldEqual("");
+      var d1 = new WondrousDate(180, 19, 1);
+      var d2 = new WondrousDate(d1.LocalDate);
+      d2.Month.ShouldEqual(19);
     }
 
     [Test]

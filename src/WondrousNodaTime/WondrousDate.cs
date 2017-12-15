@@ -8,7 +8,7 @@ using System;
 namespace WondrousNodaTime
 {
   /// <summary>
-  /// 
+  ///   
   /// </summary>
   public partial class WondrousDate
   {
