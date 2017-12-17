@@ -1,17 +1,17 @@
-﻿using NUnit.Framework;
+﻿using Xunit;
 using WondrousNodaTime.Utility;
 
 namespace WondrousNodaTime.Test
 {
   public class ExtensionTests
   {
-    [Test]
+    [Fact]
     public void TokenReplacement()
     {
       "Test {a} {b}".ReplaceTokens(
                 a => "1",
-        b => "2"
-).ShouldEqual("Test 1 2");
+                b => "2"
+          ).ShouldEqual("Test 1 2");
     }
   }
 }

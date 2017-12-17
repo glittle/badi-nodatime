@@ -2,40 +2,43 @@
 // Use of this source code is governed by the Apache License 2.0,
 // as found in the LICENSE.txt file.
 
-using NUnit.Framework;
+using Xunit;
 using WondrousNodaTime.Utility;
 
 namespace WondrousNodaTime.Test
 {
   class CreateTests
   {
-    [Test]
-    [TestCase(180, 10, 10)]
-    [TestCase(180, 18, 19)]
-    [TestCase(180, 0, 3)]
-    [TestCase(180, 19, 1)]
+    [Theory]
+    [InlineData(180, 10, 10)]
+    [InlineData(180, 18, 19)]
+    [InlineData(180, 0, 3)]
+    [InlineData(180, 19, 1)]
     public void ToWondrousString_Default(int year, int month, int day)
     {
       // ensure that this helper method is working
       new WondrousDate(year, month, day).ToString().ShouldEqual($"{year}-{month}-{day}");
     }
 
+    [Theory]
+    public void ToLocalDate() {
+    }
 
-    [Test]
-    [TestCase(180, 10, 10)]
-    [TestCase(180, 18, 19)]
-    [TestCase(180, 0, 3)]
-    [TestCase(180, 19, 1)]
+    [Theory]
+    [InlineData(180, 10, 10)]
+    [InlineData(180, 18, 19)]
+    [InlineData(180, 0, 3)]
+    [InlineData(180, 19, 1)]
     public void CreateDate_Day(int year, int month, int day)
     {
       new WondrousDate(year, month, day).Day.ShouldEqual(day);
     }
 
-    [Test]
-    [TestCase(180, 10, 10)]
-    [TestCase(180, 18, 19)]
-    [TestCase(180, 0, 3)]
-    [TestCase(180, 19, 1)]
+    [Theory]
+    [InlineData(180, 10, 10)]
+    [InlineData(180, 18, 19)]
+    [InlineData(180, 0, 3)]
+    [InlineData(180, 19, 1)]
     public void CreateDate_Month(int year, int month, int day)
     {
       new WondrousDate(year, month, day).Month.ShouldEqual(month);

@@ -1,13 +1,13 @@
 ﻿using NodaTime;
-using NUnit.Framework;
+using Xunit;
 
 namespace WondrousNodaTime.Test
 {
   public static class TestHelper
   {
-    public static void ShouldEqual<T>(this T input, T desired, string message = null)
+    public static void ShouldEqual<T>(this T input, T desired)
     {
-      Assert.AreEqual(desired, input, message);
+      Assert.Equal(desired, input);
     }
 
     public static string ToShortIsoDate(this WondrousDate input) {

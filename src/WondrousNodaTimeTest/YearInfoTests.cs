@@ -3,34 +3,34 @@
 // as found in the LICENSE.txt file.
 
 using NodaTime;
-using NUnit.Framework;
+using Xunit;
 using System.Linq;
 
 namespace WondrousNodaTime.Test
 {
   class YearInfoTests
   {
-    [Test]
-    [TestCase(172, false)]
-    [TestCase(173, false)]
-    [TestCase(207, true)]
-    [TestCase(220, true)]
+    [Theory]
+    [InlineData(172, false)]
+    [InlineData(173, false)]
+    [InlineData(207, true)]
+    [InlineData(220, true)]
     public void IsLeapYear(int year, bool isLeapYear)
     {
       new WondrousYearInfo(year).IsLeapYear.ShouldEqual(isLeapYear);
     }
 
-    [Test]
-    [TestCase(172, 4)]
-    [TestCase(173, 4)]
-    [TestCase(207, 5)]
-    [TestCase(220, 5)]
+    [Theory]
+    [InlineData(172, 4)]
+    [InlineData(173, 4)]
+    [InlineData(207, 5)]
+    [InlineData(220, 5)]
     public void DaysInAyyamiHa(int year, int days)
     {
       new WondrousYearInfo(year).DaysInAyyamiHa.ShouldEqual(days);
     }
 
-    [Test]
+    [Theory]
     public void GetSpecialDays() {
       var yi = new WondrousYearInfo(174);
       var list = yi.GetSpecialDays(SpecialDayType.FeastDay | SpecialDayType.FastingDay).ToList();
@@ -40,7 +40,7 @@ namespace WondrousNodaTime.Test
     }
 
 
-    [Test]
+    [Theory]
     public void HolyDays_Main()
     {
       var yi = new WondrousYearInfo(174);
@@ -61,7 +61,7 @@ namespace WondrousNodaTime.Test
       list[8].Date.ToShortIsoDate().ShouldEqual("2017-10-22");
     }
 
-    [Test]
+    [Theory]
     public void HolyDays_Per171()
     {
       var yi = new WondrousYearInfo(170);
@@ -82,7 +82,7 @@ namespace WondrousNodaTime.Test
       list[8].Date.ToShortIsoDate().ShouldEqual("2013-11-12");
     }
 
-    [Test]
+    [Theory]
     public void HolyDays_Other()
     {
       var yi = new WondrousYearInfo(174);

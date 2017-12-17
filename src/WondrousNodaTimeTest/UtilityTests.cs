@@ -3,7 +3,7 @@
 // as found in the LICENSE.txt file.
 
 using NodaTime;
-using NUnit.Framework;
+using Xunit;
 using System;
 using WondrousNodaTime.Utility;
 
@@ -11,7 +11,7 @@ namespace WondrousNodaTime.Test
 {
   class UtilityTests
   {
-    [Test]
+    [Theory]
     public void CheckIsWondrousDate()
     {
       Checks.EnsureIsWondrousCalendar(new WondrousDate().LocalDate, "Okay");
@@ -19,7 +19,7 @@ namespace WondrousNodaTime.Test
       Assert.Throws<ArgumentException>(() => Checks.EnsureIsWondrousCalendar(new LocalDate(), "Should Fail"));
     }
 
-    [Test]
+    [Theory]
     public void CheckNotNull()
     {
       Checks.CheckNotNull("", "Okay");
@@ -29,7 +29,7 @@ namespace WondrousNodaTime.Test
     }
 
 
-    [Test]
+    [Theory]
     public void CheckArgument()
     {
       Checks.CheckArgument("a" == "a", "Test1", "Okay");

@@ -2,18 +2,20 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net451;netcoreapp1.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.0</TargetFrameworks>
     <Deterministic>True</Deterministic>
     <IsPackable>False</IsPackable>
+    <ApplicationIcon />
+    <StartupObject />
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\WondrousNodaTime\WondrousNodaTime.csproj" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.6.1" />
     <PackageReference Include="NUnitLite" Version="3.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WondrousNodaTime\WondrousNodaTime.csproj" />
   </ItemGroup>
 
   <ItemGroup>

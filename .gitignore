@@ -12,6 +12,7 @@
 
 # IDE add-ins
 *.dotCover
+*.coverage
 *.ncrunchproject
 *.ncrunchsolution
 _NCrunch*

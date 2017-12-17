@@ -75,6 +75,11 @@ namespace WondrousNodaTime
     public LocalDate LocalDate { get { return _date; } }
 
     /// <summary>
+    /// The <see cref="DateTime"/> at midnight of the current date.
+    /// </summary>
+    public DateTime DateTime { get { return _date.WithCalendar(CalendarSystem.Iso).ToDateTimeUnspecified(); } }
+
+    /// <summary>
     /// Convert to desired calendar
     /// </summary>
     /// <param name="calendar"><see cref="T:CalendarSystem"/></param>

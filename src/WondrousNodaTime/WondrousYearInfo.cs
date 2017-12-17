@@ -92,22 +92,22 @@ namespace WondrousNodaTime
       if (typesWanted.HasFlag(SpecialDayType.HolyDay_WorkSuspended))
       {
         final.Add(new SpecialDay(new WondrousDate(_year, 1, 1), HolyDayCode.NawRuz, SpecialDayType.HolyDay_WorkSuspended));
-        final.Add(new SpecialDay(new WondrousDate(_year, 2, 13), HolyDayCode.Ridvan1, SpecialDayType.HolyDay_WorkSuspended));
+        final.Add(new SpecialDay(new WondrousDate(_year, 2, 13), HolyDayCode.Ridvan1, SpecialDayType.HolyDay_WorkSuspended, SpecialTimeCode.H15));
         final.Add(new SpecialDay(new WondrousDate(_year, 3, 2), HolyDayCode.Ridvan9, SpecialDayType.HolyDay_WorkSuspended));
         final.Add(new SpecialDay(new WondrousDate(_year, 3, 5), HolyDayCode.Ridvan12, SpecialDayType.HolyDay_WorkSuspended));
-        final.Add(new SpecialDay(new WondrousDate(_year, 4, 13), HolyDayCode.AscBaha, SpecialDayType.HolyDay_WorkSuspended));
+        final.Add(new SpecialDay(new WondrousDate(_year, 4, 13), HolyDayCode.AscBaha, SpecialDayType.HolyDay_WorkSuspended, SpecialTimeCode.H03));
 
         if (_year <= 171)
         {
-          final.Add(new SpecialDay(new WondrousDate(_year, 4, 7), HolyDayCode.DeclBab, SpecialDayType.HolyDay_WorkSuspended));
-          final.Add(new SpecialDay(new WondrousDate(_year, 6, 16), HolyDayCode.Martrydom, SpecialDayType.HolyDay_WorkSuspended));
+          final.Add(new SpecialDay(new WondrousDate(_year, 4, 7), HolyDayCode.DeclBab, SpecialDayType.HolyDay_WorkSuspended, SpecialTimeCode.SS2));
+          final.Add(new SpecialDay(new WondrousDate(_year, 6, 16), HolyDayCode.Martrydom, SpecialDayType.HolyDay_WorkSuspended, SpecialTimeCode.H12));
           final.Add(new SpecialDay(new WondrousDate(_year, 12, 5), HolyDayCode.BirthBab, SpecialDayType.HolyDay_WorkSuspended));
           final.Add(new SpecialDay(new WondrousDate(_year, 13, 9), HolyDayCode.BirthBaha, SpecialDayType.HolyDay_WorkSuspended));
         }
         else
         {
-          final.Add(new SpecialDay(new WondrousDate(_year, 4, 8), HolyDayCode.DeclBab, SpecialDayType.HolyDay_WorkSuspended));
-          final.Add(new SpecialDay(new WondrousDate(_year, 6, 17), HolyDayCode.Martrydom, SpecialDayType.HolyDay_WorkSuspended));
+          final.Add(new SpecialDay(new WondrousDate(_year, 4, 8), HolyDayCode.DeclBab, SpecialDayType.HolyDay_WorkSuspended, SpecialTimeCode.SS2));
+          final.Add(new SpecialDay(new WondrousDate(_year, 6, 17), HolyDayCode.Martrydom, SpecialDayType.HolyDay_WorkSuspended, SpecialTimeCode.H12));
 
           // Get from Twin Holy Birthday compressed code
           // code is CHAR((month - 11) * 20 + 32 + day)  -- 32 is added to avoid control characters
@@ -129,7 +129,7 @@ namespace WondrousNodaTime
       if (typesWanted.HasFlag(SpecialDayType.HolyDay_Other))
       {
         final.Add(new SpecialDay(new WondrousDate(_year, 14, 4), HolyDayCode.Covenant, SpecialDayType.HolyDay_Other));
-        final.Add(new SpecialDay(new WondrousDate(_year, 14, 6), HolyDayCode.AscAbdul, SpecialDayType.HolyDay_Other));
+        final.Add(new SpecialDay(new WondrousDate(_year, 14, 6), HolyDayCode.AscAbdul, SpecialDayType.HolyDay_Other, SpecialTimeCode.H01));
       }
 
       return final
