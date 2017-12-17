@@ -1,0 +1,107 @@
+{
+  "MonthMeaning": {
+    "message": "உபரி நாள்கள்,பேரொளி,புகழ்,அழகு,சிறப்பு,ஒளி,இரக்கம்,சொற்கள்,நிறைவு,பெயர்,வலிமை,விருப்பம்,அறிவு, சக்தி,உரை,கேள்வி,மதிப்பு,மாட்சிமை,அரசு,உயர்வு",
+    "description": "Names of days/months, with first one being Ayyam-i-ha"
+  },
+  "MonthArabic": {
+  },
+  "WeekdayMeaning": {
+    "message": ",புகழ்,அழகு,நிறைவு,கிருபை,நீதி,மாட்சிமை,சுதந்திரம்",
+    "description": "start with Saturday"
+  },
+  "WeekdayArabic": {
+  },
+  "YearOfUnityMeaning": {
+    "message": ",அ,ப,தந்தை,ட,வாசல்,வ,நித்தியம்,வள்ளன்மை,பேரொளி,அன்பு,மகிழ்ச்சிகரமான,பதில்,தனி,அபரிமிதம்,பாசம்,ஆரம்பம்,ஒளிர்வு,அதி ஒளிர்வு,ஒற்றுமை",
+    "description": "Vahid names, with leading , "
+  },
+  "YearOfUnityArabic": {
+  },
+  "UnityArabic": {
+  },
+  "UnityMeaning": {
+    "message": "வஹீட்"
+  },
+  "AllThingsArabic": {
+  },
+  "AllThingsMeaning": {
+    "message": "குல்-இ-ஷே",
+    "description": "Transalation of Kull-i-Shay"
+  },
+  "Elements": {
+    "message": ",தீ,வாயு,நீர்,பூமி",
+    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+  },
+  "EraAbbrev": {
+    "message": "ப.யு."
+  },
+  "EraLong": {
+    "message": "பஹாய் யுகம்"
+  },
+  "EraShort": {
+    "message": "ப.யு."
+  },
+  "HolyDay_AscAbdul": {
+    "message": "அப்துல்-பஹாவின் விண்ணேற்றம்"
+  },
+  "HolyDay_AscBaha": {
+    "message": "பஹாவுல்லாவின் விண்ணேற்றம்"
+  },
+  "HolyDay_BirthBab": {
+    "message": "பாப் பெருமானாரின் பிறப்பு"
+  },
+  "HolyDay_BirthBaha": {
+    "message": "பஹாவுல்லாவின் பிறப்பு"
+  },
+  "HolyDay_Covenant": {
+    "message": "ஒப்பந்தத் திருநாள்"
+  },
+  "HolyDay_DeclBab": {
+    "message": "பாப் பெருமானாரின் பிரகடனம்"
+  },
+  "HolyDay_Martyrdom": {
+    "message": "பாப் பெருமானாரின் தியாக மரணம்"
+  },
+  "HolyDay_NawRuz": {
+    "message": "நவ்-ருஸ்"
+  },
+  "HolyDay_Ridvan1": {
+    "message": "ரித்வான் 1-வது நாள்"
+  },
+  "HolyDay_Ridvan12": {
+    "message": "ரித்வான் 12-வது நாள்"
+  },
+  "HolyDay_Ridvan9": {
+    "message": "ரித்வான் 9-வது நாள்"
+  },
+  "Intercalary": {
+    "message": "உபரி நாள்கள்"
+  },
+  "Ordinal": {
+    "message": "வது,ஆம்,வது,வது",
+    "description": "x...,1,2,3"
+  },
+  "OrdinalNames": {
+    "message": ",முதல்,இரண்டாம்,மூன்றாம்,நான்காம்,ஐந்தாம்,ஆறாம்,ஏழாம்,எட்டாம்,ஒன்பதாம்,பத்தாம்,பதினொன்றாம்,பன்னிரண்டாம்,பதிமூன்றாம்,பதிநான்காம்,பதினைந்தாம்,பதினேழாம்,பதினெட்டாம்,பத்தொன்பதாம்"
+  },
+  "SpecialTime_H01": {
+    "message": "அதிகாலை 1 மணி (நியம நேரம்)",
+    "description": "Ascension of Abdu'l-Baha"
+  },
+  "SpecialTime_H03": {
+    "message": "காலை 3 மணி (நியம நேரம்)",
+    "description": "Ascension of Baha'u'llah"
+  },
+  "SpecialTime_H12": {
+    "message": "நன்பகல் (நியம நேரம்)",
+    "description": "Martyrdom of the Bab"
+  },
+  "SpecialTime_H15": {
+    "message": "மாலை 3 மணி (நியம நேரம்)",
+    "description": "First day of Ridvan"
+  },
+  "SpecialTime_SS2": {
+    "message": "அஸ்தமனத்திற்குப் பிறகு சுமார் 2 மணி நேரம் கழித்து",
+    "description": "Declaration of the Bab"
+  }
+}

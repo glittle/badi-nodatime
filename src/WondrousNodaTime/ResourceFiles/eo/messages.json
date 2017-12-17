@@ -1,0 +1,83 @@
+{
+  "MonthMeaning": {
+    "message": "Intermetitaj tagoj,Splendoro,Gloro,Beleco,Grandiozeco,Lumo,Indulgo,Vortoj,Perfekteco,Nomoj,Potenco,Volo,Scio,Povo,Parolo,Demandoj,Honoro,Suvereneco,Regado,Alteco",
+    "description": "Names of days/months, with first one being Ayyam-i-ha"
+  },
+  "WeekdayMeaning": {
+    "message": ",Gloro,Beleco,Perfekteco,Graco,Justeco,Majesteco,Sendependeco",
+    "description": "start with Saturday"
+  },
+  "WeekdayArabic": {
+  },
+  "YearOfUnityMeaning": {
+    "message": ",A,B,Patro,D,Pordego,V,Eterneco,Malavareco,Splendoro,Amo,Rava,Respondo,Unusola,Donacema,Simpatio,Komenco,Luma,Plejluma,Unueco",
+    "description": "Vahid names, with leading , "
+  },
+  "YearOfUnityArabic": {
+  },
+  "UnityArabic": {
+  },
+  "UnityMeaning": {
+    "message": "Unueco"
+  },
+  "AllThingsArabic": {
+  },
+  "AllThingsMeaning": {
+  },
+  "Elements": {
+  },
+  "EraAbbrev": {
+  },
+  "EraLong": {
+  },
+  "EraShort": {
+  },
+  "HolyDay_AscBaha": {
+    "message": "Forpaso de Bahá'u'lláh"
+  },
+  "HolyDay_BirthBaha": {
+    "message": "Naskiĝo de Bahá'u'lláh"
+  },
+  "HolyDay_Covenant": {
+    "message": "Tago de la Interligo"
+  },
+  "HolyDay_Ridvan1": {
+    "message": "Unua tago de Ridván"
+  },
+  "HolyDay_Ridvan12": {
+    "message": "Dekdua tago de Ridván"
+  },
+  "HolyDay_Ridvan9": {
+    "message": "Naŭa tago de Ridván"
+  },
+
+  "HolyDay_AscAbdul": {
+  },
+  "HolyDay_BirthBab": {
+  },
+  "HolyDay_DeclBab": {
+  },
+  "HolyDay_Martyrdom": {
+  },
+  "HolyDay_NawRuz": {
+  },
+  "Intercalary": {
+  },
+  "Ordinal": {
+    "message": "a,a,a,a",
+    "description": "x...,1,2,3"
+  },
+  "OrdinalNames": {
+    "message": ",unua,dua,tria,kvara,kvina,sesa,sepa,oka,naŭa,deka,dekunua,dekdua,dektria,dekkvara,dekkvina,deksesa,deksepa,dekoka,deknaŭa"
+  },
+  "SpecialTime_H01": {
+  },
+  "SpecialTime_H03": {
+  },
+  "SpecialTime_H12": {
+  },
+  "SpecialTime_H15": {
+  },
+  "SpecialTime_SS2": {
+  }
+}

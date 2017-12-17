@@ -5,10 +5,11 @@
 using NodaTime;
 using Xunit;
 using System.Linq;
+using WondrousNodaTime;
 
-namespace WondrousNodaTime.Test
+namespace WondrousNodaTimeTest
 {
-  class YearInfoTests
+  public class YearInfoTests
   {
     [Theory]
     [InlineData(172, false)]
@@ -30,8 +31,9 @@ namespace WondrousNodaTime.Test
       new WondrousYearInfo(year).DaysInAyyamiHa.ShouldEqual(days);
     }
 
-    [Theory]
-    public void GetSpecialDays() {
+    [Fact]
+    public void GetSpecialDays()
+    {
       var yi = new WondrousYearInfo(174);
       var list = yi.GetSpecialDays(SpecialDayType.FeastDay | SpecialDayType.FastingDay).ToList();
 
@@ -40,7 +42,7 @@ namespace WondrousNodaTime.Test
     }
 
 
-    [Theory]
+    [Fact]
     public void HolyDays_Main()
     {
       var yi = new WondrousYearInfo(174);
@@ -61,7 +63,7 @@ namespace WondrousNodaTime.Test
       list[8].Date.ToShortIsoDate().ShouldEqual("2017-10-22");
     }
 
-    [Theory]
+    [Fact]
     public void HolyDays_Per171()
     {
       var yi = new WondrousYearInfo(170);
@@ -82,7 +84,7 @@ namespace WondrousNodaTime.Test
       list[8].Date.ToShortIsoDate().ShouldEqual("2013-11-12");
     }
 
-    [Theory]
+    [Fact]
     public void HolyDays_Other()
     {
       var yi = new WondrousYearInfo(174);
@@ -96,6 +98,10 @@ namespace WondrousNodaTime.Test
       var hd1 = list[0];
       hd1.DayCode.ShouldEqual(HolyDayCode.Covenant);
       hd1.DayType.ShouldEqual(SpecialDayType.HolyDay_Other);
+
+      var hd2 = list[1];
+      hd2.TimeCode.ShouldEqual(SpecialTimeCode.H01);
+      hd2.DayCode.ShouldEqual(HolyDayCode.AscAbdul);
     }
   }
 }

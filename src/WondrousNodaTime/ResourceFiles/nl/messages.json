@@ -1,0 +1,103 @@
+{
+  "MonthMeaning": {
+    "message": "Schrikkeldagen,Pracht,Heerlijkheid,Schoonheid,Grootheid,Licht,Barmhartigheid,woorden,Volmaaktheid,Namen,Macht,Wil,Kennis,Kracht,Spraak,Vragen,Eer,Soevereiniteit,Heerschappij,Verhevenheid",
+    "description": "Names of days/months, with first one being Ayyam-i-ha"
+  },
+  "MonthArabic": {
+  },
+  "WeekdayMeaning": {
+    "message": ",Heerlijkheid,Schoonheid,Volmaaktheid,Genade,Gerechtigheid,Majesteit,Onafhankelijkheid",
+    "description": "start with Saturday"
+  },
+  "WeekdayArabic": {
+  },
+  "YearOfUnityMeaning": {
+    "message": ",A,B,Vader,D,Poort,V,Eeuwigheid,Grootmoedigheid,Pracht,Liefde,Heerlijk,Antwoord,Enige,Milddadig,Genegenheid,Oorsprong,Lichtend,Lichtendste,Eenheid",
+    "description": "Vahid names, with leading , "
+  },
+  "YearOfUnityArabic": {
+  },
+  "UnityArabic": {
+  },
+  "UnityMeaning": {
+    "message": "Eenheid"
+  },
+  "AllThingsArabic": {
+  },
+  "AllThingsMeaning": {
+    "message": "Alle dingen",
+    "description": "Transalation of Kull-i-Shay"
+  },
+  "Elements": {
+    "message": ",Vuur,Lucht,Water,Aarde",
+    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+  },
+  "EraAbbrev": {
+  },
+  "EraLong": {
+    "message": "Bahá'í tijdperk"
+  },
+  "EraShort": {
+  },
+  "HolyDay_AscAbdul": {
+    "message": "Heengaan van `Abdu'l-Bahá"
+  },
+  "HolyDay_AscBaha": {
+    "message": "Hemelvaart van Bahá'u'lláh"
+  },
+  "HolyDay_BirthBab": {
+    "message": "Geboortedag van de Báb"
+  },
+  "HolyDay_BirthBaha": {
+    "message": "Geboortedag van Bahá'u'lláh"
+  },
+  "HolyDay_Covenant": {
+    "message": "Dag van het Verbond"
+  },
+  "HolyDay_DeclBab": {
+    "message": "Verkondiging van de Báb"
+  },
+  "HolyDay_Martyrdom": {
+    "message": "Marteldood van de Báb"
+  },
+  "HolyDay_NawRuz": {
+    "message": "Naw Rúz"
+  },
+  "HolyDay_Ridvan1": {
+    "message": "Eerste dag van Ridván"
+  },
+  "HolyDay_Ridvan12": {
+    "message": "Twaalfde dag van Ridván"
+  },
+  "HolyDay_Ridvan9": {
+    "message": "Negende dag van Ridván"
+  },
+  "Intercalary": {
+    "message": "Schrikkeldagen"
+  },
+  "Ordinal": {
+  },
+  "OrdinalNames": {
+    "message": ",eerste,tweede,derde,vierde,vijfde,zesde,zevende,achtste,negende,tiende,elfde,twaalfde,dertiende,veertiende,vijftiende,zestiende,zeventiende,achttiende,negentiende"
+  },
+  "SpecialTime_H01": {
+    "message": "1:00 (Standaard Tijd)",
+    "description": "Ascension of Abdu'l-Baha"
+  },
+  "SpecialTime_H03": {
+    "message": "3:00 (Standaard Tijd)",
+    "description": "Ascension of Baha'u'llah"
+  },
+  "SpecialTime_H12": {
+    "message": "Middaguur (Standaard Tijd)",
+    "description": "Martyrdom of the Bab"
+  },
+  "SpecialTime_H15": {
+    "message": "15:00 (Standaard Tijd)",
+    "description": "First day of Ridvan"
+  },
+  "SpecialTime_SS2": {
+    "message": "Ongeveer twee uur na zonsondergang",
+    "description": "Declaration of the Bab"
+  }
+}

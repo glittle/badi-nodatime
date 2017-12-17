@@ -6,12 +6,14 @@ using NodaTime;
 using Xunit;
 using System;
 using WondrousNodaTime.Utility;
+using WondrousNodaTime;
+using WondrousNodaTime.Resources;
 
-namespace WondrousNodaTime.Test
+namespace WondrousNodaTimeTest
 {
-  class UtilityTests
+  public class UtilityTests
   {
-    [Theory]
+    [Fact]
     public void CheckIsWondrousDate()
     {
       Checks.EnsureIsWondrousCalendar(new WondrousDate().LocalDate, "Okay");
@@ -19,7 +21,7 @@ namespace WondrousNodaTime.Test
       Assert.Throws<ArgumentException>(() => Checks.EnsureIsWondrousCalendar(new LocalDate(), "Should Fail"));
     }
 
-    [Theory]
+    [Fact]
     public void CheckNotNull()
     {
       Checks.CheckNotNull("", "Okay");
@@ -29,7 +31,7 @@ namespace WondrousNodaTime.Test
     }
 
 
-    [Theory]
+    [Fact]
     public void CheckArgument()
     {
       Checks.CheckArgument("a" == "a", "Test1", "Okay");
@@ -37,5 +39,4 @@ namespace WondrousNodaTime.Test
       Assert.Throws<ArgumentException>(() => Checks.CheckArgument("a" == "b", "Test2", "Should Fail"));
     }
   }
-
 }

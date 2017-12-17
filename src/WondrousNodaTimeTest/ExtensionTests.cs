@@ -1,7 +1,7 @@
 ﻿using Xunit;
 using WondrousNodaTime.Utility;
 
-namespace WondrousNodaTime.Test
+namespace WondrousNodaTimeTest
 {
   public class ExtensionTests
   {

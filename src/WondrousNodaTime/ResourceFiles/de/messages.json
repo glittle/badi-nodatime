@@ -1,0 +1,91 @@
+{
+  "MonthMeaning": {
+    "message": "Eingeschobene Tage,Herrlichkeit,Ruhm,Schönheit,Größe,Licht,Barmherzigkeit,Worte,Vollkommenheit,Namen,Macht,Wille,Wissen,Kraft,Sprache,Fragen,Ehre,Souveränität,Herrschaft,Erhabenheit",
+    "description": "Names of days/months, with first one being Ayyam-i-ha"
+  },
+  "MonthArabic": {
+  },
+  "WeekdayMeaning": {
+    "message": ",Ruhm,Schönheit,Vollkommenheit,Gnade,Gerechtigkeit,Majestät,Unabhängigkeit",
+    "description": "start with Saturday"
+  },
+  "WeekdayArabic": {
+  },
+  "YearOfUnityMeaning": {
+    "message": ",A,B,Vater,D,Tor,V,Ewigkeit,Edelmut,Herrlichkeit,Liebe,Entzückend,Antwort,Einzig,Mildtätig,Zuneigung,Anfang,Strahlend,Überaus Strahlend,Einheit",
+    "description": "Vahid names, with leading , "
+  },
+  "YearOfUnityArabic": {
+  },
+  "UnityArabic": {
+  },
+  "UnityMeaning": {
+    "message": "Einheit"
+  },
+  "AllThingsArabic": {
+  },
+  "AllThingsMeaning": {
+  },
+  "Elements": {
+    "message": ",Feuer,Luft,Wasser,Erde",
+    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+  },
+  "EraAbbrev": {
+    "message": "B.E."
+  },
+  "EraLong": {
+    "message": "Bahá'í Ära"
+  },
+  "EraShort": {
+    "message": "BE"
+  },
+  "HolyDay_AscAbdul": {
+    "message": "Hinscheiden `Abdu’l-Bahás"
+  },
+  "HolyDay_AscBaha": {
+    "message": "Hinscheiden Bahá’u’lláhs"
+  },
+  "HolyDay_BirthBab": {
+    "message": "Geburt des Báb"
+  },
+  "HolyDay_BirthBaha": {
+    "message": "Geburt Bahá’u’lláhs"
+  },
+  "HolyDay_Covenant": {
+    "message": "Tag des Bundes"
+  },
+  "HolyDay_DeclBab": {
+    "message": "Erklärung des Báb"
+  },
+  "HolyDay_Martyrdom": {
+    "message": "Märtyrertod des Báb"
+  },
+  "HolyDay_NawRuz": {
+  },
+  "HolyDay_Ridvan1": {
+    "message": "Erster Riḍván-Tag"
+  },
+  "HolyDay_Ridvan12": {
+    "message": "Zwölfter Riḍván-Tag"
+  },
+  "HolyDay_Ridvan9": {
+    "message": "Neunter Riḍván-Tag"
+  },
+  "Intercalary": {
+    "message": "Eingeschobene Tage"
+  },
+  "Ordinal": {
+  },
+  "OrdinalNames": {
+  },
+  "SpecialTime_H01": {
+  },
+  "SpecialTime_H03": {
+  },
+  "SpecialTime_H12": {
+  },
+  "SpecialTime_H15": {
+  },
+  "SpecialTime_SS2": {
+  }
+}

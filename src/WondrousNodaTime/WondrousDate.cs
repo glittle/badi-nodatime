@@ -209,5 +209,15 @@ namespace WondrousNodaTime
       }
     }
 
+    /// <summary>
+    /// Day of week, from 1 to 7. Day 1 is Saturday (started at sunset on Friday)
+    /// </summary>
+    public int Weekday
+    {
+      get
+      {
+        return 1 + ((int)_date.DayOfWeek + 1) % 7;
+      }
+    }
   }
 }

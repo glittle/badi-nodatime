@@ -1,0 +1,95 @@
+{
+  "MonthMeaning": {
+    "message": "Jours Intercalaires,Splendeur,Gloire,Beauté,Grandeur,Lumière,Miséricorde,Paroles,Perfection,Noms,Puissance,Volonté,Connaissance,Pouvoir,Discours,Questions,Honneur,Souveraineté,Empire,Élévation",
+    "description": "Names of days/months, with first one being Ayyam-i-ha"
+  },
+  "MonthArabic": {
+  },
+  "WeekdayMeaning": {
+    "message": ",Gloire,Beauté,Perfection,Grâce,Justice,Majesté,Indépendance",
+    "description": "start with Saturday"
+  },
+  "WeekdayArabic": {
+  },
+  "YearOfUnityMeaning": {
+    "message": ",A,B,Père,D,Porte,V,Éternité,Générosité,Splendeur,Amour,Délice,Réponse,Unique,Bienfaisant,Affection,Commencement,Lumineux,Le Plus Lumineux,Unité",
+    "description": "Vahid names, with leading , "
+  },
+  "YearOfUnityArabic": {
+  },
+  "UnityArabic": {
+  },
+  "UnityMeaning": {
+  },
+  "AllThingsArabic": {
+  },
+  "AllThingsMeaning": {
+  },
+  "Elements": {
+    "message": ",Feu,Air,Eau,Terre",
+    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+  },
+  "EraAbbrev": {
+    "message": "E.B."
+  },
+  "EraLong": {
+    "message": "Ère Bahá'íe"
+  },
+  "EraShort": {
+    "message": "EB"
+  },
+  "HolyDay_AscAbdul": {
+    "message": "Ascension de `Abdu'l-Bahá"
+  },
+  "HolyDay_AscBaha": {
+    "message": "Ascension de Bahá'u'lláh"
+  },
+  "HolyDay_BirthBab": {
+    "message": "Naissance du Báb"
+  },
+  "HolyDay_BirthBaha": {
+    "message": "Naissance de Bahá'u'lláh"
+  },
+  "HolyDay_Covenant": {
+    "message": "Jour de l'Alliance"
+  },
+  "HolyDay_DeclBab": {
+    "message": "Déclaration du Báb"
+  },
+  "HolyDay_Martyrdom": {
+    "message": "Martyre du the Báb"
+  },
+  "HolyDay_NawRuz": {
+    "message": "Naw Rúz"
+  },
+  "HolyDay_Ridvan1": {
+    "message": "Premier jour de Ridván"
+  },
+  "HolyDay_Ridvan12": {
+    "message": "Douzième jour de Ridván"
+  },
+  "HolyDay_Ridvan9": {
+    "message": "Neuvième jour de Ridván"
+  },
+  "Intercalary": {
+    "message": "Jours intercalaires"
+  },
+  "Ordinal": {
+    "message": "ème,er,ème,ème",
+    "description": "x...,1,2,3"
+  },
+  "OrdinalNames": {
+    "message": ",premier,deuxième,troisième,quatrième,cinquième,sixième,septième,huitième,neuvième,dixième,onzième,douzième,treizième,quatorzième,quinzième,seizième,dix-septième,dix-huitième,dix-neuvième"
+  },
+  "SpecialTime_H01": {
+    "comment": "not translated in French"
+  },
+  "SpecialTime_H03": {
+  },
+  "SpecialTime_H12": {
+  },
+  "SpecialTime_H15": {
+  },
+  "SpecialTime_SS2": {
+  }
+}

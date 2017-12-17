@@ -1,0 +1,102 @@
+{
+  "MonthMeaning": {
+    "message": "Dias Intercalares,Esplendor,Glória,Beleza,Grandeza,Luz,Misericórdia,Palavras,Perfeição,Nomes,Potência,Vontade,Conhecimento,Poder,Discurso,Perguntas,Honra,Soberania,Domínio,Sublimidade",
+    "description": "Names of days/months, with first one being Ayyam-i-ha"
+  },
+  "WeekdayMeaning": {
+    "message": ",Glória,Beleza,Perfeição,Graça,Justiça,Majestade,Independência",
+    "description": "start with Saturday"
+  },
+  "WeekdayArabic": {
+  },
+  "YearOfUnityMeaning": {
+    "message": ",A,B,Pai,D,Porta,V,Eternidade,Generosidade,Esplendor,Amor,Deleite,Resposta,Único,Caridoso,Afecto,Início,Luminosidade,Mais Luminoso,Unidade",
+    "description": "Vahid names, with leading , "
+  },
+  "YearOfUnityArabic": {
+  },
+  "UnityArabic": {
+  },
+  "UnityMeaning": {
+  },
+  "AllThingsArabic": {
+  },
+  "AllThingsMeaning": {
+  },
+  "Elements": {
+    "message": ",Fogo,Ar,Água,Terra",
+    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+  },
+  "EraAbbrev": {
+    "message": "E.B."
+  },
+  "EraLong": {
+    "message": "Era Bahá'í"
+  },
+  "EraShort": {
+    "message": "EB"
+  },
+  "HolyDay_AscAbdul": {
+    "message": "Ascensão de 'Abdu'l-Bahá"
+  },
+  "HolyDay_AscBaha": {
+    "message": "Ascensão de Bahá'u'lláh"
+  },
+  "HolyDay_BirthBab": {
+    "message": "Nascimento do Báb"
+  },
+  "HolyDay_BirthBaha": {
+    "message": "Nascimento de Bahá'u'lláh"
+  },
+  "HolyDay_Covenant": {
+    "message": "Dia da Aliança"
+  },
+  "HolyDay_DeclBab": {
+    "message": "Declaração do Báb"
+  },
+  "HolyDay_Martyrdom": {
+    "message": "Martirio do Báb"
+  },
+  "HolyDay_NawRuz": {
+    "message": "Naw Rúz"
+  },
+  "HolyDay_Ridvan1": {
+    "message": "Primeiro Dia de Ridván"
+  },
+  "HolyDay_Ridvan12": {
+    "message": "Décimo Segundo Dia de Ridván"
+  },
+  "HolyDay_Ridvan9": {
+    "message": "Nono Dia de Ridván"
+  },
+  "Intercalary": {
+    "message": "Dias Intercalares"
+  },
+  "Ordinal": {
+    "message": "º",
+    "description": "x...,1,2,3"
+  },
+  "OrdinalNames": {
+    "message": ",primeiro,segundo,terceiro,quarto,quinto,sexto,sétimo,oitavo,nono,décimo,décimo primeiro,décimo segundo,décimo terceiro,décimo quarto,décimo quinto,décimo sexto,décimo sétimo,décimo oitavo,décimo nono"
+  },
+  "SpecialTime_H01": {
+    "message": "01H00 (GMT)",
+    "description": "Ascension of Abdu'l-Baha"
+  },
+  "SpecialTime_H03": {
+    "message": "03H00 (GMT)",
+    "description": "Ascension of Baha'u'llah"
+  },
+  "SpecialTime_H12": {
+    "message": "Meio-Dia (GMT)",
+    "description": "Martyrdom of the Bab"
+  },
+  "SpecialTime_H15": {
+    "message": "15H00  (GMT)",
+    "description": "First day of Ridvan"
+  },
+  "SpecialTime_SS2": {
+    "message": "Duas horas após pôr-do-sol",
+    "description": "Declaration of the Bab"
+  }
+}

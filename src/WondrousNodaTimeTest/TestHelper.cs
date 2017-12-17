@@ -1,7 +1,8 @@
 ﻿using NodaTime;
+using WondrousNodaTime;
 using Xunit;
 
-namespace WondrousNodaTime.Test
+namespace WondrousNodaTimeTest
 {
   public static class TestHelper
   {

@@ -1,54 +1,53 @@
 {
-  "bMonthMeaning": {
+  "MonthMeaning": {
     "message": "Intercalary Days,Splendor,Glory,Beauty,Grandeur,Light,Mercy,Words,Perfection,Names,Might,Will,Knowledge,Power,Speech,Questions,Honor,Sovereignty,Dominion,Loftiness",
     "description": "Names of days/months, with first one being Ayyam-i-ha"
   },
-  "bMonthNameAr": {
+  "MonthArabic": {
     "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Ma<u>sh</u>íyyat,`Ilm,Qudrat,Qawl,Masá'il,<u>Sh</u>araf,Sulṭán,Mulk,`Alá’",
     "description": "month names, start with Ayyam-i-Ha"
   },
-  "bWeekDayMeaning": {
+  "WeekdayMeaning": {
     "message": ",Glory,Beauty,Perfection,Grace,Justice,Majesty,Independence",
     "description": "start with Saturday"
   },
-  "bWeekdayNameAr": {
+  "WeekdayArabic": {
     "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
     "description": "weekday names, with leading , "
   },
-  "bYearInVahidMeaning": {
-    "message": ",A,B,Father,D,Gate,V,Eternity,Generosity,Splendour,Love,Delightful,Answer,Single,Bountiful,Affection,Beginning,Luminous,Most Luminous,Unity",
+  "YearOfUnityMeaning": {
+    "message": ",A,B,Father,D,Gate,V,Eternity,Generosity,Splendor,Love,Delightful,Answer,Single,Bountiful,Affection,Beginning,Luminous,Most Luminous,Unity",
     "description": "Vahid names, with leading , "
   },
-  "bYearInVahidNameAr": {
-    "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá',Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badí‘,Bahí,Abhá,Váḥid",
+  "YearOfUnityArabic": {
+    "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá,Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badí‘,Bahí,Abhá,Váḥid",
     "description": "Arabic names of years in a Vahid, with leading , "
   },
-  "elements": {
-    "message": "Fire,Air,Water,Earth",
+  "UnityArabic": {
+    "message": "Váḥid"
+  },
+  "UnityMeaning": {
+    "message": "Unity"
+  },
+  "AllThingsArabic": {
+    "message": "Kull-i-<u>Sh</u>ay’"
+  },
+  "AllThingsMeaning": {
+    "message": "All-Things",
+    "description": "Transalation of Kull-i-Shay"
+  },
+  "Elements": {
+    "message": ",Fire,Air,Water,Earth",
     "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
   },
-  "eraAbbrev": {
+  "EraAbbrev": {
     "message": "B.E."
   },
-  "eraLong": {
+  "EraLong": {
     "message": "Bahá'í Era"
   },
-  "eraShort": {
+  "EraShort": {
     "message": "BE"
-  },
-  "gMonthLong": {
-    "message": "January,February,March,April,May,June,July,August,September,October,November,December"
-  },
-  "gMonthShort": {
-    "message": "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec"
-  },
-  "gWeekdayLong": {
-    "message": "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday",
-    "description": "start with Sunday"
-  },
-  "gWeekdayShort": {
-    "message": "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-    "description": "start with Sun"
   },
   "HolyDay_AscAbdul": {
     "message": "Ascension of `Abdu'l-Bahá"
@@ -86,58 +85,31 @@
   "Intercalary": {
     "message": "Intercalary Days"
   },
-  "Kullishay": {
-    "message": "Kull-i-<u>Sh</u>ay’"
-  },
-  "KullishayLocal": {
-    "message": "All-Things",
-    "description": "Transalation of Kull-i-Shay"
-  },
-  "ordinal": {
+  "Ordinal": {
     "message": "th,st,nd,rd",
-    "description": "x,1,2,3"
+    "description": "x...,1,2,3"
   },
-  "ordinalNames": {
+  "OrdinalNames": {
     "message": ",first,second,third,fourth,fifth,sixth,seventh,eighth,nineth,tenth,eleventh,twelfth,thirteenth,fourteenth,fifteenth,sixteenth,seventeenth,eighteenth,nineteenth"
   },
-  "shoghiExample": {
-    "message": "This is the weekday of {bWeekdayNamePri}, the day of {bDayNamePri}, of the month of {bMonthNamePri}, of the year {bYearInVahidNamePri}, of the {bVahidOrdinalName} {VahidLabelPri}, of the {bKullishayOrdinalName} {KullishayLabelPri}.",
-    "description": "Example given by Shoghi Effendi"
-  },
-  "specialTime_0100S": {
+  "SpecialTime_H01": {
     "message": "1 am (Standard Time)",
-    "description": "Martyrdom of the Bab"
+    "description": "Ascension of Abdu'l-Baha"
   },
-  "specialTime_0300S": {
+  "SpecialTime_H03": {
     "message": "3 am (Standard Time)",
     "description": "Ascension of Baha'u'llah"
   },
-  "specialTime_1200S": {
+  "SpecialTime_H12": {
     "message": "Noon (Standard Time)",
     "description": "Martyrdom of the Bab"
   },
-  "specialTime_1500S": {
+  "SpecialTime_H15": {
     "message": "3 pm (Standard Time)",
     "description": "First day of Ridvan"
   },
-  "specialTime_SS2": {
+  "SpecialTime_SS2": {
     "message": "About 2 hours after sunset",
     "description": "Declaration of the Bab"
-  },
-  "Vahid": {
-    "message": "Váḥid"
-  },
-  "VahidLocal": {
-    "message": "Unity"
-  },
-  "YearOfEra": {
-    "message": "Year of Bahá'í Era"
-  },
-  "YearOfEraFormat": {
-    "message": "{bYear}"
-  },
-  "YearOfVahid": {
-    "message": "Year of {VahidLabelPri}"
   }
-
 }

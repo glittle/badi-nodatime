@@ -1,0 +1,93 @@
+{
+  "MonthMeaning": {
+    "message": "ایام هاء، بهاء، جلال، جمال، عظمة، نور، رحمة، کلمات، کمال، اسماء، عزّة، مشیّة، علم، قدرة، قول، مسائل، شرف، سلطان، ملک، علا",
+    "description": "Names of days/months, with first one being Ayyam-i-ha"
+  },
+  "MonthArabic": {
+    "message": "ایام هاء، بهاء، جلال، جمال، عظمة، نور، رحمة، کلمات، کمال، اسماء، عزّة، مشیّة، علم، قدرة، قول، مسائل، شرف، سلطان، ملک، علا",
+    "description": "month names, start with Ayyam-i-Ha"
+  },
+  "WeekdayMeaning": {
+  },
+  "WeekdayArabic": {
+  },
+  "YearOfUnityMeaning": {
+  },
+  "YearOfUnityArabic": {
+  },
+  "UnityArabic": {
+    "message": "واحد بیانی"
+  },
+  "UnityMeaning": {
+    "message": "واحد بیانی"
+  },
+  "AllThingsArabic": {
+    "message": "کلشیئ"
+  },
+  "AllThingsMeaning": {
+    "message": "کل شيئ",
+    "description": "Transalation of Kull-i-Shay"
+  },
+  "Elements": {
+  },
+  "EraAbbrev": {
+    "message": "د.ب."
+  },
+  "EraLong": {
+    "message": "دور بهائی"
+  },
+  "EraShort": {
+    "message": "بدیع"
+  },
+  "HolyDay_AscAbdul": {
+    "message": "صعود حضرت عبدالبهاء"
+  },
+  "HolyDay_AscBaha": {
+    "message": "صعود حضرت بهاءالله"
+  },
+  "HolyDay_BirthBab": {
+    "message": "تولد حضرت اعلی"
+  },
+  "HolyDay_BirthBaha": {
+    "message": "تولد حضرت بهاءالله"
+  },
+  "HolyDay_Covenant": {
+    "message": "روز عهد و میثاق"
+  },
+  "HolyDay_DeclBab": {
+    "message": "اظهار امر حضرت باب"
+  },
+  "HolyDay_Martyrdom": {
+    "message": "شهادت حضرت اعلی"
+  },
+  "HolyDay_NawRuz": {
+    "message": "نوروز"
+  },
+  "HolyDay_Ridvan1": {
+    "message": "اول عیذ رضوان"
+  },
+  "HolyDay_Ridvan12": {
+    "message": "دوازدهم عید رضوان"
+  },
+  "HolyDay_Ridvan9": {
+    "message": "نهنم عید رضوان"
+  },
+  "Intercalary": {
+    "message": "ایام هاء"
+  },
+  "Ordinal": {
+  },
+  "OrdinalNames": {
+    "message": "اولین، دومین، سومین، چهارمین، پنجمین، ششمین، هفتمین، هشتمین، نهمین، دهمین، یازذهمین، دوازدهمین، سیزدهمین، چهاردهمین، پانزدهمین، شانزدهمین، هفدهمین، هیجدهمین، نوزدهمین"
+  },
+  "SpecialTime_H01": {
+  },
+  "SpecialTime_H03": {
+  },
+  "SpecialTime_H12": {
+  },
+  "SpecialTime_H15": {
+  },
+  "SpecialTime_SS2": {
+  }
+}

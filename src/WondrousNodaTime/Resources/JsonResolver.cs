@@ -14,21 +14,29 @@ namespace WondrousNodaTime.Resources
     Dictionary<string, string> _resourceItems = new Dictionary<string, string>();
     List<string> _filesLoaded = new List<string>();
     string _folder;
+    string _forcedLanguageCode;
 
-    public JsonResolver()
+    public JsonResolver(string languageCode = null)
     {
+      _forcedLanguageCode = languageCode;
       LoadFiles();
     }
 
     private void LoadFiles()
     {
-      var assembly = Assembly.GetEntryAssembly();
-      //var resourceStream = assembly.M.GetManifestResourceStream("EmbeddedResource.ResourcesFiles.en.messages.json");
+      var assembly = Assembly.GetExecutingAssembly();
 
       _folder = Path.Combine(Path.GetDirectoryName(assembly.Location), "ResourceFiles");
 
       // load base language, then culture languages
       LoadLanguage("en");
+
+      if (_forcedLanguageCode != null)
+      {
+        LoadLanguage(_forcedLanguageCode);
+        return;
+      }
+
       LoadLanguage(CultureInfo.CurrentCulture.Name.Substring(0, 2));
       LoadLanguage(CultureInfo.CurrentCulture.Name);
       LoadLanguage(CultureInfo.CurrentUICulture.Name.Substring(0, 2));
@@ -63,8 +71,10 @@ namespace WondrousNodaTime.Resources
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>
-    public string GetRawString(string key) {
-      if (_resourceItems.ContainsKey(key)) {
+    public string GetRawString(string key)
+    {
+      if (_resourceItems.ContainsKey(key))
+      {
         return _resourceItems[key];
       }
       return null;

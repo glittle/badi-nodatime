@@ -8,10 +8,20 @@ using WondrousNodaTime;
 using Xunit;
 using NodaTime;
 
-namespace WondrousNodaTime.Test
+namespace WondrousNodaTimeTest
 {
-  public partial class CoreTest
+  public class CoreTest
   {
+    [Fact]
+    public void CreateDateNow() {
+      var w = new WondrousDate();
+      var g = DateTime.Today;
+
+      var g2 = w.WithCalendar(CalendarSystem.Gregorian);
+      g2.Year.ShouldEqual(g.Year);
+      g2.Month.ShouldEqual(g.Month);
+      g2.Day.ShouldEqual(g.Day);
+    }
     [Fact]
     public void CreateDate()
     {

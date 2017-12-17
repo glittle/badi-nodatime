@@ -4,10 +4,11 @@
 
 using Xunit;
 using WondrousNodaTime.Utility;
+using WondrousNodaTime;
 
-namespace WondrousNodaTime.Test
+namespace WondrousNodaTimeTest
 {
-  class CreateTests
+  public class CreateTests
   {
     [Theory]
     [InlineData(180, 10, 10)]
@@ -20,9 +21,10 @@ namespace WondrousNodaTime.Test
       new WondrousDate(year, month, day).ToString().ShouldEqual($"{year}-{month}-{day}");
     }
 
-    [Theory]
-    public void ToLocalDate() {
-    }
+    //[Theory]
+    //public void ToLocalDate()
+    //{
+    //}
 
     [Theory]
     [InlineData(180, 10, 10)]

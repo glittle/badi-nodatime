@@ -2,11 +2,12 @@
 // Use of this source code is governed by the Apache License 2.0,
 // as found in the LICENSE.txt file.
 
+using WondrousNodaTime;
 using Xunit;
 
-namespace WondrousNodaTime.Test
+namespace WondrousNodaTimeTest
 {
-  class DatePartsTests
+  public class DatePartsTests
   {
     [Theory]
     [InlineData(180, 0, 0)]
@@ -29,7 +30,8 @@ namespace WondrousNodaTime.Test
     [InlineData(20, 2)]
     [InlineData(171, 9)]
     [InlineData(172, 10)]
-    public void Unity(int year, int unity) {
+    public void Unity(int year, int unity)
+    {
       new WondrousDate(year, 1, 1).Unity.ShouldEqual(unity);
       new WondrousDate(year, 19, 19).Unity.ShouldEqual(unity);
       new WondrousDate(year, 0, 1).Unity.ShouldEqual(unity);
@@ -59,6 +61,15 @@ namespace WondrousNodaTime.Test
     public void AllThings(int year, int allThings)
     {
       new WondrousDate(year, 1, 1).AllThings.ShouldEqual(allThings);
+    }
+
+
+    [Theory]
+    [InlineData(174, 15, 6, 1)]
+    [InlineData(174, 15, 5, 7)]
+    public void Weekday(int year, int month, int day, int dow)
+    {
+      new WondrousDate(year, month, day).Weekday.ShouldEqual(dow);
     }
   }
 }
