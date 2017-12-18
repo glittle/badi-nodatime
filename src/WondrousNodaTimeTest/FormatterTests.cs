@@ -40,6 +40,7 @@ namespace WondrousNodaTimeTest
     [InlineData(180, 10, 9, "{yearOfUnity00} {yearOfUnity_meaning} {yearOfUnity_arabic}", "09 Splendor Bahá")]
     [InlineData(180, 10, 9, "{weekday} {weekday00} {weekday_meaning} {weekday_arabic}", "1 01 Glory Jalál")]
     [InlineData(180, 10, 9, "{element} {element_meaning}", "3 Water")]
+    [InlineData(180, 10, 9, "{unknown} {day}", "{unknown} 9")]
     public void ToString(int year, int month, int day, string format, string result)
     {
       new WondrousDate(year, month, day).ToString(format).ShouldEqual(result);

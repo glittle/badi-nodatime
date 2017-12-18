@@ -6,12 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="NodaTime">
-      <HintPath>..\..\LocalNodaTime\netstandard1.3\NodaTime.dll</HintPath>
-    </Reference>
+    <PackageReference Include="NodaTime" Version="2.3.0-beta01" />
   </ItemGroup>
 
   <ItemGroup>

@@ -123,7 +123,7 @@ namespace WondrousNodaTime
     }
 
     /// <summary>
-    /// Year of the Baha'i Era
+    /// Year of the Bahá'í Era
     /// </summary>
     public int YearOfEra
     {
@@ -134,7 +134,7 @@ namespace WondrousNodaTime
     }
 
     /// <summary>
-    /// Year of the Unity (Vahid)
+    /// Year of the Unity (Váḥid)
     /// </summary>
     public int YearOfUnity
     {
