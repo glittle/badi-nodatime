@@ -61,7 +61,7 @@ namespace WondrousNodaTime.Utility
     {
       get
       {
-        return AvailableReplacements(null).Select(e => e.Value.Token).ToList();
+        return AvailableReplacements(new WondrousDate()).Keys.ToList();
       }
     }
 
@@ -112,9 +112,12 @@ namespace WondrousNodaTime.Utility
 
         unity => date.Unity,
         unity00 => date.Unity.Pad00(),
+        unity_ordinal => _resolver.GetListItem("OrdinalNames", date.Unity),
 
         allThings => date.AllThings,
-        allThings00 => date.AllThings.Pad00()
+        allThings00 => date.AllThings.Pad00(),
+        allThings_ordinal => _resolver.GetListItem("OrdinalNames", date.AllThings),
+
       }.ToDictionary(e => e.Parameters[0].Name, e => new CompiledExpression(e));
     }
   }

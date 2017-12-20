@@ -17,12 +17,18 @@ title: Wondrous Noda Time
       Wondrous Noda Time
     </a>.
   </p>
+
   <h2>Usage</h2>
+  
   <h3>Using</h3>
   {% highlight c# %}using WondrousNodaTime;{% endhighlight %}
 
   <h3>Basic Dates</h3>
   
+  <p>WondrousNodaTime has complete support for translating dates between the Wondrous calendar and the Gregorian calendar. Internally,
+  Noda Time LocalDates with the `CalendarSystem.Wondrous` are used. If you use LocalDates, the full power of Noda Time is available to you.
+  If you are not using Noda Time, you don't need to know anything about it!</p>
+
   {% highlight c# %}
   // show today's date
   var today = new WondrousDate();
@@ -46,6 +52,119 @@ title: Wondrous Noda Time
   Console.WriteLine("The day before Naw Rúz 175 is " + gregorianDate2.ToString("D"))
       // sample result: The day before Naw Rúz 175 is Tuesday, March 20, 2018
   {% endhighlight %}
+
+  <h3>Bahá'í Holy Days</h3>
+
+  <p>This version of the library has full knowledge of the Bahá'í Holy Days and what days they fall on.</p>
+
+  {% highlight c# %}
+  var year174 = new WondrousYearInfo(174);
+  var listing = year174.GetSpecialDays(SpecialDayType.HolyDay_WorkSuspended | SpecialDayType.FeastDay);
+
+  // more samples to come...
+  {% endhighlight %}
+
+  <h3>Date Formatting</h3>
+
+  <p>The `ToString` method of each `WondrousDate` object supports a non-standard extended formatting system. The `patternText` you 
+  supply is actually a template with a set of custom tokens that will be processed using that date. </p>
+
+  {% highlight c# %}
+  var pattern =  "{day} {month_arabic} {yearOfEra}";
+  Console.Writeline(new WondrousDate(180, 10, 9).ToString(pattern));
+     // result: 9 `Izzat 180
+
+  pattern = "{day_meaning} {month_meaning} {yearOfUnity}";
+  // result: Names Might 9
+
+  pattern = "{weekday_arabic}/{weekday_meaning} ({element_meaning}) in the {yearOfUnity_ordinal} year of the {unity_ordinal} Unity.";
+  // result: Jalál/Glory (Water) in the nineth year of the tenth Unity.
+  {% endhighlight %}
+
+  <p>A current list of the tokens supported can be obtained by reading `new WondrousNodaTime.Utility.DateTemplateProcessor().AvailableTokens`.
+  Here's a sample for 10 Questions 174:</p>
+
+  <dl>
+    <dt>W</dt>
+    <dd>174-15-10</dd>
+    <dt>G</dt>
+    <dd>2017-12-20 -- the Gregorian date</dd>
+    <dt>day</dt>
+    <dd>10</dd>
+    <dt>day00</dt>
+    <dd>10</dd>
+    <dt>day_ordinal</dt>
+    <dd>tenth</dd>
+    <dt>day_meaning</dt>
+    <dd>Might</dd>
+    <dt>day_arabic</dt>
+    <dd>`Izzat</dd>
+    <dt>weekday</dt>
+    <dd>5</dd>
+    <dt>weekday00</dt>
+    <dd>05</dd>
+    <dt>weekday_ordinal</dt>
+    <dd>fifth</dd>
+    <dt>weekday_meaning</dt>
+    <dd>Justice</dd>
+    <dt>weekday_arabic</dt>
+    <dd>'Idál</dd>
+    <dt>month</dt>
+    <dd>15</dd>
+    <dt>month00</dt>
+    <dd>15</dd>
+    <dt>month_ordinal</dt>
+    <dd>fifteenth</dd>
+    <dt>month_meaning</dt>
+    <dd>Questions</dd>
+    <dt>month_arabic</dt>
+    <dd>Masá'il</dd>
+    <dt>element</dt>
+    <dd>4</dd>
+    <dt>element00</dt>
+    <dd>04</dd>
+    <dt>element_meaning</dt>
+    <dd>Earth</dd>
+    <dt>yearOfEra</dt>
+    <dd>174</dd>
+    <dt>yearOfEra00</dt>
+    <dd>174</dd>
+    <dt>yearOfUnity</dt>
+    <dd>3</dd>
+    <dt>yearOfUnity00</dt>
+    <dd>03</dd>
+    <dt>yearOfUnity_ordinal</dt>
+    <dd>third</dd>
+    <dt>yearOfUnity_meaning</dt>
+    <dd>Father</dd>
+    <dt>yearOfUnity_arabic</dt>
+    <dd>Ab</dd>
+    <dt>unity</dt>
+    <dd>10</dd>
+    <dt>unity00</dt>
+    <dd>10</dd>
+    <dt>unity_ordinal</dt>
+    <dd>tenth</dd>
+    <dt>allThings</dt>
+    <dd>1</dd>
+    <dt>allThings00</dt>
+    <dd>01</dd>
+    <dt>allThings_ordinal</dt>
+    <dd>first</dd>
+  </dl>
+
+  <p>The names used can be extended into your spoken language quite easily. Languages already in the package include: English, French,
+  German, Dutch, Spanish, Portugese, Chinese, Esperanto, and Tamil. (Some are only partially translated.)</p>
+
+  <h2>Road Map</h2>
+
+  <ul>
+    <li>Add time and sunset support. The current system ignores sunset and works as if the day starts at midnight.</li>
+  </ul>
+
+  <h2>Feedback</h2>
+  <p>Please contact Glen Little (<a href="mailto:glen.little@gmail.com">glen.little@gmail.com</a>) to discuss any improvements or additions
+  that you might be interested in!</p>
 
 </div>
 <!-- /.blurb -->
