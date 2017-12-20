@@ -1,5 +1,5 @@
 title: Wondrous Noda Time
-description: Wondrous Noda Time is a helper that provides extra functionality for working with the Wondrous Calendar in Noda Time.
+description: Wondrous Noda Time provides functionality for working with Wondrous Calendar dates in .NET.
 google_analytics: UA-1312528-12
 theme: jekyll-theme-tactile
 plugins:
