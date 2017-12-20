@@ -7,12 +7,8 @@ using System;
 
 namespace WondrousNodaTime
 {
-  /// <summary>
-  ///   
-  /// </summary>
-  public partial class WondrousDate
+  public partial class WondrousDate 
   {
-
     internal const int AyyamiHaMonth = 0;
 
     internal const int DaysInMonth = 19;

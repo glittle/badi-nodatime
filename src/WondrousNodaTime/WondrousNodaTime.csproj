@@ -13,8 +13,8 @@
     <PackageIconUrl>https://github.com/glittle/wondrous-nodatime/raw/master/docs/wondrousIcon128.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/glittle/wondrous-nodatime</RepositoryUrl>
     <PackageTags>baha'i bahai badi date calendar nodatime</PackageTags>
-    <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
-    <Version>1.0.0-beta01</Version>
+    <PackageReleaseNotes>Add PlusDays and PlusYears</PackageReleaseNotes>
+    <Version>1.0.0-beta02</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
