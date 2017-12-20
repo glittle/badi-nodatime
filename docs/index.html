@@ -1,17 +1,53 @@
---- 
-layout: default 
+---
+layout: default
 title: Wondrous Noda Time
 ---
 <div class="blurb">
-    <p>This library provides comprehensive support for the Wondrous calendar in .NET projects.
-    </p>
-    <h2>About the Calendar</h2>
-    <p>The Wondrous calendar (also known as the Badí‘ calendar) was introduced by the founders of the Bahá'í Faith, the Báb
-        and Bahá'u'lláh, in the mid- to late-1800's (according to the Gregorian calendar). More details can be found at the
-        Wikipedia page about the
-        <a target=wiki href="https://en.wikipedia.org/wiki/Bah%C3%A1%27%C3%AD_calendar">Wondrous Calendar</a>.
-    </p>
-    <h2>Installation</h2>
-    <p>You (will be able to) install this via nuget.</p>
+  <p>
+    This library provides comprehensive support for the Wondrous calendar in .NET projects.
+  </p>
+  <h2>About the Calendar</h2>
+  <p>
+    The Wondrous calendar (also known as the Badí‘ calendar) was introduced by the founders of the Bahá'í Faith, the Báb
+    and Bahá'u'lláh, in the mid- to late-1800's (according to the Gregorian calendar). More details can be found at the
+    Wikipedia page about the
+    <a target=wiki href="https://en.wikipedia.org/wiki/Bah%C3%A1%27%C3%AD_calendar">Wondrous Calendar</a>.
+  </p>
+  <h2>Installation</h2>
+  <p>
+    You can install this via nuget at <a href="https://www.nuget.org/packages/GlenLittle.Wondrous.WondrousNodaTime/">
+      NuGet:
+      Wondrous Noda Time
+    </a>.
+  </p>
+  <h2>Usage</h2>
+  {% highlight c# %}
+  using WondrousNodaTime;
+  {% endhighlight %}
+
+  <h3>Basic Dates</h3>
+  
+  {% highlight c# %}
+  // show today's date
+  var today = new WondrousDate();
+  Console.WriteLine("Today is " + today.ToString());  // sample result: Today is 174-15-9
+
+  // convert a Wondrous date to a Gregorian date
+  var gregorianDate = today.DateTime;
+
+  // create a WondrousDate from a .NET DateTime
+  var date1 = new WondrousDate(DateTime.Today);
+
+  // create a WondrousDate from a Noda Time LocalDate
+  var localDate = new LocalDate(DateTime.Today);
+  var date2 = new WondrousDate(localDate);
+
+  // create a WondrousDate for a specific date in the Wondrous calendar
+  var date3 = new WondrousDate(175, 1, 1); // Naw Ruz 175
+  var gregorianDate2 = date3.PlusDays(-1).DateTime; // subtract one day then get the Gregorian date
+  Console.WriteLine("The day before Naw Rúz 175 is " + gregorianDate2.ToString("D"))
+  // sample result: The day before Naw Rúz 175 is Tuesday, March 20, 2018
+  {% endhighlight %}
+
 </div>
 <!-- /.blurb -->
