@@ -30,7 +30,8 @@ title: Wondrous Noda Time
   {% highlight c# %}
   // show today's date
   var today = new WondrousDate();
-  Console.WriteLine("Today is " + today.ToString());  // sample result: Today is 174-15-9
+  Console.WriteLine("Today is " + today.ToString());  
+      // sample result: Today is 174-15-9
 
   // convert a Wondrous date to a Gregorian date
   var gregorianDate = today.DateTime;
@@ -42,11 +43,12 @@ title: Wondrous Noda Time
   var localDate = new LocalDate(DateTime.Today);
   var date2 = new WondrousDate(localDate);
 
-  // create a WondrousDate for a specific date in the Wondrous calendar
+  // create a WondrousDate for a specific date
   var date3 = new WondrousDate(175, 1, 1); // Naw Ruz 175
-  var gregorianDate2 = date3.PlusDays(-1).DateTime; // subtract one day then get the Gregorian date
+  // subtract one day then get the Gregorian date
+  var gregorianDate2 = date3.PlusDays(-1).DateTime; 
   Console.WriteLine("The day before Naw Rúz 175 is " + gregorianDate2.ToString("D"))
-  // sample result: The day before Naw Rúz 175 is Tuesday, March 20, 2018
+      // sample result: The day before Naw Rúz 175 is Tuesday, March 20, 2018
   {% endhighlight %}
 
 </div>
