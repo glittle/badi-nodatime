@@ -19,21 +19,23 @@ title: Wondrous Noda Time
   </p>
 
   <h2>Usage</h2>
-  
+
   <h3>Using</h3>
   {% highlight c# %}using WondrousNodaTime;{% endhighlight %}
 
   <h3>Basic Dates</h3>
-  
-  <p>WondrousNodaTime has complete support for translating dates between the Wondrous calendar and the Gregorian calendar. Internally,
-  Noda Time LocalDates with the `CalendarSystem.Wondrous` are used. If you use LocalDates, the full power of Noda Time is available to you.
-  If you are not using Noda Time, you don't need to know anything about it!</p>
+
+  <p>
+    WondrousNodaTime has complete support for translating dates between the Wondrous calendar and the Gregorian calendar. Internally,
+    Noda Time LocalDates with the `CalendarSystem.Wondrous` are used. If you use LocalDates, the full power of Noda Time is available to you.
+    If you are not using Noda Time, you don't need to know anything about it!
+  </p>
 
   {% highlight c# %}
   // show today's date
   var today = new WondrousDate();
-  Console.WriteLine("Today is " + today.ToString());  
-      // sample result: Today is 174-15-9
+  Console.WriteLine("Today is " + today.ToString());
+  // sample result: Today is 174-15-9
 
   // convert a Wondrous date to a Gregorian date
   var gregorianDate = today.DateTime;
@@ -48,9 +50,9 @@ title: Wondrous Noda Time
   // create a WondrousDate for a specific date
   var date3 = new WondrousDate(175, 1, 1); // Naw Ruz 175
   // subtract one day then get the Gregorian date
-  var gregorianDate2 = date3.PlusDays(-1).DateTime; 
+  var gregorianDate2 = date3.PlusDays(-1).DateTime;
   Console.WriteLine("The day before Naw Rúz 175 is " + gregorianDate2.ToString("D"))
-      // sample result: The day before Naw Rúz 175 is Tuesday, March 20, 2018
+  // sample result: The day before Naw Rúz 175 is Tuesday, March 20, 2018
   {% endhighlight %}
 
   <h3>Bahá'í Holy Days</h3>
@@ -66,13 +68,15 @@ title: Wondrous Noda Time
 
   <h3>Date Formatting</h3>
 
-  <p>The `ToString` method of each `WondrousDate` object supports a non-standard extended formatting system. The `patternText` you 
-  supply is actually a template with a set of custom tokens that will be processed using that date. </p>
+  <p>
+    The `ToString` method of each `WondrousDate` object supports a non-standard extended formatting system. The `patternText` you
+    supply is actually a template with a set of custom tokens that will be processed using that date.
+  </p>
 
   {% highlight c# %}
   var pattern =  "{day} {month_arabic} {yearOfEra}";
   Console.Writeline(new WondrousDate(180, 10, 9).ToString(pattern));
-     // result: 9 `Izzat 180
+  // result: 9 `Izzat 180
 
   pattern = "{day_meaning} {month_meaning} {yearOfUnity}";
   // result: Names Might 9
@@ -81,90 +85,115 @@ title: Wondrous Noda Time
   // result: Jalál/Glory (Water) in the nineth year of the tenth Unity.
   {% endhighlight %}
 
-  <p>A current list of the tokens supported can be obtained by reading `new WondrousNodaTime.Utility.DateTemplateProcessor().AvailableTokens`.
-  Here's a sample for 10 Questions 174:</p>
+  <p>
+    A current list of the tokens supported can be obtained by reading `new WondrousNodaTime.Utility.DateTemplateProcessor().AvailableTokens`.
+    Here's a sample for 10 Questions 174:
+  </p>
 
   <dl>
-    <dt>W</dt>
-    <dd>174-15-10</dd>
-    <dt>G</dt>
-    <dd>2017-12-20 -- the Gregorian date</dd>
-    <dt>day</dt>
-    <dd>10</dd>
-    <dt>day00</dt>
-    <dd>10</dd>
-    <dt>day_ordinal</dt>
-    <dd>tenth</dd>
-    <dt>day_meaning</dt>
-    <dd>Might</dd>
-    <dt>day_arabic</dt>
-    <dd>`Izzat</dd>
-    <dt>weekday</dt>
-    <dd>5</dd>
-    <dt>weekday00</dt>
-    <dd>05</dd>
-    <dt>weekday_ordinal</dt>
-    <dd>fifth</dd>
-    <dt>weekday_meaning</dt>
-    <dd>Justice</dd>
-    <dt>weekday_arabic</dt>
-    <dd>'Idál</dd>
-    <dt>month</dt>
+    <dt>{day}</dt>
+    <dd>11</dd>
+    <dt>{day00}</dt>
+    <dd>11</dd>
+    <dt>{day_ordinal}</dt>
+    <dd>eleventh</dd>
+    <dt>{day_meaning}</dt>
+    <dd>Will</dd>
+    <dt>{day_arabic}</dt>
+    <dd>Ma<u>sh</u>íyyat</dd>
+    <dt>{weekday}</dt>
+    <dd>6</dd>
+    <dt>{weekday00}</dt>
+    <dd>06</dd>
+    <dt>{weekday_ordinal}</dt>
+    <dd>sixth</dd>
+    <dt>{weekday_meaning}</dt>
+    <dd>Majesty</dd>
+    <dt>{weekday_arabic}</dt>
+    <dd>Istijlál</dd>
+    <dt>{month}</dt>
     <dd>15</dd>
-    <dt>month00</dt>
+    <dt>{month00}</dt>
     <dd>15</dd>
-    <dt>month_ordinal</dt>
+    <dt>{month_ordinal}</dt>
     <dd>fifteenth</dd>
-    <dt>month_meaning</dt>
+    <dt>{month_meaning}</dt>
     <dd>Questions</dd>
-    <dt>month_arabic</dt>
+    <dt>{month_arabic}</dt>
     <dd>Masá'il</dd>
-    <dt>element</dt>
+    <dt>{element}</dt>
     <dd>4</dd>
-    <dt>element00</dt>
+    <dt>{element00}</dt>
     <dd>04</dd>
-    <dt>element_meaning</dt>
+    <dt>{element_meaning}</dt>
     <dd>Earth</dd>
-    <dt>yearOfEra</dt>
+    <dt>{yearOfEra}</dt>
     <dd>174</dd>
-    <dt>yearOfEra00</dt>
+    <dt>{yearOfEra00}</dt>
     <dd>174</dd>
-    <dt>yearOfUnity</dt>
+    <dt>{yearOfUnity}</dt>
     <dd>3</dd>
-    <dt>yearOfUnity00</dt>
+    <dt>{yearOfUnity00}</dt>
     <dd>03</dd>
-    <dt>yearOfUnity_ordinal</dt>
+    <dt>{yearOfUnity_ordinal}</dt>
     <dd>third</dd>
-    <dt>yearOfUnity_meaning</dt>
+    <dt>{yearOfUnity_meaning}</dt>
     <dd>Father</dd>
-    <dt>yearOfUnity_arabic</dt>
+    <dt>{yearOfUnity_arabic}</dt>
     <dd>Ab</dd>
-    <dt>unity</dt>
+    <dt>{unity}</dt>
     <dd>10</dd>
-    <dt>unity00</dt>
+    <dt>{unity00}</dt>
     <dd>10</dd>
-    <dt>unity_ordinal</dt>
+    <dt>{unity_ordinal}</dt>
     <dd>tenth</dd>
-    <dt>allThings</dt>
+    <dt>{allThings}</dt>
     <dd>1</dd>
-    <dt>allThings00</dt>
+    <dt>{allThings00}</dt>
     <dd>01</dd>
-    <dt>allThings_ordinal</dt>
+    <dt>{allThings_ordinal}</dt>
     <dd>first</dd>
+    <dt>{gregorian.day}</dt>
+    <dd>21</dd>
+    <dt>{gregorian.day00}</dt>
+    <dd>21</dd>
+    <dt>{gregorian.month}</dt>
+    <dd>12</dd>
+    <dt>{gregorian.month00}</dt>
+    <dd>12</dd>
+    <dt>{gregorian.month_latin_short}</dt>
+    <dd>Dec</dd>
+    <dt>{gregorian.month_latin_long}</dt>
+    <dd>December</dd>
+    <dt>{gregorian.year}</dt>
+    <dd>2017</dd>
   </dl>
 
-  <p>The names used can be extended into your spoken language quite easily. Languages already in the package include: English, French,
-  German, Dutch, Spanish, Portugese, Chinese, Esperanto, and Tamil. (Some are only partially translated.)</p>
+  <p>
+    The names used can be extended into your spoken language quite easily. Languages already in the package include: English, French,
+    German, Dutch, Spanish, Portugese, Chinese, Esperanto, and Tamil. (Some are only partially translated.) For example, in German:
+  </p>
+
+  <dl>
+    <dt>{day_meaning}</dt>
+    <dd>Wille</dd>
+    <dt>{month_meaning}</dt>
+    <dd>Fragen</dd>
+  </dl>
+
 
   <h2>Road Map</h2>
 
   <ul>
     <li>Add time and sunset support. The current system ignores sunset and works as if the day starts at midnight.</li>
+    <li>Improve .NET Core specific coding around dependency injection.</li>
   </ul>
 
   <h2>Feedback</h2>
-  <p>Please contact Glen Little (<a href="mailto:glen.little@gmail.com">glen.little@gmail.com</a>) to discuss any improvements or additions
-  that you might be interested in!</p>
+  <p>
+    Please contact Glen Little (<a href="mailto:glen.little@gmail.com">glen.little@gmail.com</a>) to discuss any improvements or additions
+    that you might be interested in!
+  </p>
 
 </div>
 <!-- /.blurb -->

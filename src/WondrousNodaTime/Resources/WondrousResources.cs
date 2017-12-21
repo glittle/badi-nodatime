@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -19,12 +20,27 @@ namespace WondrousNodaTime.Resources
   /// </summary>
   public class WondrousResources
   {
-    Func<string, string> _customResolver;
-    JsonResolver _defaultResolver;
+    IResourceResolver _customResolver;
+    IResourceResolver _defaultResolver;
 
     Dictionary<string, string[]> _parsedLists;
 
     public const string PrefixIfInvalid = "[?";
+    private static ServiceProvider _provider;
+    private static ServiceCollection _serviceCollection;
+
+    private WondrousResources()
+    {
+      //TODO move this to a better place?
+      //TODO remove hard coded dependency?
+      if (_serviceCollection == null)
+      {
+        _serviceCollection = new ServiceCollection();
+        _serviceCollection.AddScoped<IResourceResolver, JsonResolver>();
+        _provider = _serviceCollection.BuildServiceProvider();
+      }
+    }
+
 
     /// <summary>
     /// Source of translated values specific to this Wondrous Calendar library.
@@ -37,15 +53,22 @@ namespace WondrousNodaTime.Resources
     /// </param>
     /// <param name="customResolver">Provide an alternative mechanism to get the resources normally found in the JSON files in ResourceFile.</param>
     /// <remarks>The custom resolver should return null if it cannot provide a value for the key.</remarks>
-    public WondrousResources(string languageCode = null, Func<string, string> customResolver = null)
+    public WondrousResources(string languageCode = null, IResourceResolver customResolver = null) : this()
     {
-      _defaultResolver = new JsonResolver(languageCode);
+      _defaultResolver = _provider.GetRequiredService<IResourceResolver>();
+      if (languageCode != null)
+      {
+        _defaultResolver.Language = languageCode;
+        if (_parsedLists != null) _parsedLists.Clear();
+      }
       _customResolver = customResolver;
     }
 
+    public string Language => _defaultResolver.Language;
+
     public string GetString(string key)
     {
-      var raw1 = _customResolver == null ? null : _customResolver(key);
+      var raw1 = _customResolver == null ? null : _customResolver.GetRawString(key);
 
       var raw2 = raw1 ?? _defaultResolver.GetRawString(key);
       return raw2 ?? PrefixIfInvalid + key + "]";
@@ -65,7 +88,8 @@ namespace WondrousNodaTime.Resources
       else
       {
         var s = GetString(key);
-        if (s.StartsWith(PrefixIfInvalid)) {
+        if (s.StartsWith(PrefixIfInvalid))
+        {
           return s;
         }
         list = s == null ? new string[0] : s.Split(',');

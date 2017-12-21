@@ -52,27 +52,49 @@ namespace WondrousNodaTimeTest
       }
     }
 
+    private class CustomProvider : IResourceResolver {
+      Dictionary<string, string> myDictionary = new Dictionary<string, string> {
+        { "myKey", "myValue" },
+        { "hello?", "goodbye!" },
+      };
+
+      public string Language { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+      public string GetRawString(string key)
+      {
+        if (myDictionary.ContainsKey(key)) {
+          return myDictionary[key];
+        }
+        return null;
+      }
+    }
+
     [Fact]
-    public void CustomProvider()
+    public void CustomProviderTest()
     {
       var myDictionary = new Dictionary<string, string> {
         { "myKey", "myValue" },
         { "hello?", "goodbye!" },
       };
 
-      WondrousResources _resolver = new WondrousResources("en", key =>
-      {
-        if (myDictionary.ContainsKey(key))
-        {
-          return myDictionary[key];
-        }
-        return null;
-      });
+      WondrousResources _resolver = new WondrousResources("en", new CustomProvider());
 
       _resolver.GetString("EraShort").ShouldEqual("BE"); // normal matches work
       _resolver.GetString("myKey").ShouldEqual("myValue");
       _resolver.GetString("hello?").ShouldEqual("goodbye!");
     }
 
+    [Theory]
+    [InlineData("de", "19 --> Erhabenheit")]
+    [InlineData("zh", "19 --> 阿拉")]
+    [InlineData("pt", "19 --> Sublimidade")]
+    public void Multilingual(string langCode, string result)
+    {
+      var testDate = new WondrousDate(175, 19, 19);
+
+      var resolver = new WondrousResources(langCode);
+      var dtp = new WondrousNodaTime.Utility.DateTemplateProcessor(resolver);
+      dtp.FillTemplate(testDate, "{month} --> {month_meaning}").ShouldEqual(result);
+    }
   }
 }

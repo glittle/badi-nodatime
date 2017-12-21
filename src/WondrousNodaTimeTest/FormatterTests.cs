@@ -16,7 +16,7 @@ namespace WondrousNodaTimeTest
     [InlineData(180, 19, 1, "180-19-1")]
     public void ToString_Default(int year, int month, int day, string result)
     {
-      new WondrousDate(year, month, day).ToString("{W}").ShouldEqual(result);
+      new WondrousDate(year, month, day).ToString().ShouldEqual(result);
     }
 
 
@@ -27,7 +27,7 @@ namespace WondrousNodaTimeTest
     [InlineData(180, 19, 1, "2024-3-1")]
     public void ToString_G(int year, int month, int day, string result)
     {
-      new WondrousDate(year, month, day).ToString("{G}").ShouldEqual(result);
+      new WondrousDate(year, month, day).ToString("{gregorian.year}-{gregorian.month}-{gregorian.day}").ShouldEqual(result);
     }
 
 
@@ -42,6 +42,7 @@ namespace WondrousNodaTimeTest
     [InlineData(180, 10, 9, "{weekday_arabic}/{weekday_meaning} ({element_meaning}) in the {yearOfUnity_ordinal} year of the {unity_ordinal} Unity.", "Jalál/Glory (Water) in the nineth year of the tenth Unity.")]
     [InlineData(180, 10, 9, "{element} {element_meaning}", "3 Water")]
     [InlineData(180, 10, 9, "{unknown} {day}", "{unknown} 9")]
+    [InlineData(180, 10, 9, "{month_meaning} {yearOfEra} overlaps {gregorian.month_latin_long} {gregorian.year}", "Might 180 overlaps September 2023")]
     public void ToString(int year, int month, int day, string format, string result)
     {
       new WondrousDate(year, month, day).ToString(format).ShouldEqual(result);

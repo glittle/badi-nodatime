@@ -52,17 +52,29 @@ namespace WondrousNodaTime.Utility
     /// <returns></returns>
     public string ReplaceTokens(string template, IDictionary<string, CompiledExpression> availableReplacements)
     {
-      return Regex.Replace(template, @"{(\w+)}", (token) =>
+      return Regex.Replace(template, @"{([\w\.]+)}", (token) =>
       {
-        var key = token.Groups[1].Value;
-        if (availableReplacements.ContainsKey(key))
+        var tokenContent = token.Groups[1].Value;
+
+        var parts = tokenContent.Split('.');
+        var majorKey = parts[0];
+
+        if (availableReplacements.ContainsKey(majorKey))
         {
-          var value = availableReplacements[key].GetValue(key);
+          var value = availableReplacements[majorKey].GetValue(majorKey);
           if (value != null)
           {
+            if (parts.Length == 2 && value.GetType().IsGenericType)
+            {
+              var minorKey = parts[1];
+              return ((Dictionary<string, CompiledExpression>)value)[minorKey].GetValue(minorKey).ToString();
+            }
+
             return value.ToString();
           }
         }
+
+        // not found? return the entire token
         return token.Groups[0].Value;
       });
     }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
 using WondrousNodaTime.Resources;
+using System.Globalization;
 
 namespace WondrousNodaTime.Utility
 {
@@ -34,19 +35,21 @@ namespace WondrousNodaTime.Utility
     {
       if (string.IsNullOrWhiteSpace(template))
       {
-        template = "{W}";
+        template = "{yearOfEra}-{month}-{day}";
       }
 
       string answer1 = template;
       string answer2;
       bool repeat;
 
-      do {
+      do
+      {
         answer2 = _tokenReplacer.ReplaceTokens(answer1, AvailableReplacements(date));
 
         repeat = answer2.Contains("{") && answer2 != answer1;
 
-        if (repeat) {
+        if (repeat)
+        {
           answer1 = answer2;
         }
       } while (repeat);
@@ -55,13 +58,33 @@ namespace WondrousNodaTime.Utility
     }
 
     /// <summary>
-    /// A listing of available replacement tokens
+    /// A listing of available replacement tokens, with their values for the date provided
     /// </summary>
-    public List<string> AvailableTokens
+    public IEnumerable<string> AvailableTokens(WondrousDate testDate = null, string template = null)
     {
-      get
+      testDate = testDate ?? new WondrousDate();
+      template = template ?? "<dt>{{{0}}}</dt><dd>{1}</dd>";
+
+      var dict = AvailableReplacements(testDate);
+      var keys = dict.Keys;
+
+      // test each for compound keys
+      foreach (var key in keys)
       {
-        return AvailableReplacements(new WondrousDate()).Keys.ToList();
+        var value = dict[key].GetValue(key);
+
+        if (value.GetType().IsGenericType)
+        {
+          foreach (var minorKey in ((Dictionary<string, CompiledExpression>)value).Keys)
+          {
+            string compoundKey = $"{key}.{minorKey}";
+            yield return String.Format(template, compoundKey, testDate.ToString($"{{{compoundKey}}}"));
+          }
+        }
+        else
+        {
+          yield return String.Format(template, key, testDate.ToString($"{{{key}}}"));
+        }
       }
     }
 
@@ -76,8 +99,6 @@ namespace WondrousNodaTime.Utility
       var g = date.WithCalendar(CalendarSystem.Gregorian);
 
       return new List<Expression<Func<string, object>>> {
-        W => "{yearOfEra}-{month}-{day}",
-        G => $"{g.Year}-{g.Month}-{g.Day}",
 
         day => date.Day,
         day00 => date.Day.Pad00(),
@@ -117,6 +138,24 @@ namespace WondrousNodaTime.Utility
         allThings => date.AllThings,
         allThings00 => date.AllThings.Pad00(),
         allThings_ordinal => _resolver.GetListItem("OrdinalNames", date.AllThings),
+
+        gregorian => new List<Expression<Func<string, object>>> {
+          
+          // basic options... for other formats, use standard .NET or Noda Time format features
+
+          day => g.Day,
+          day00 => g.Day.Pad00(),
+
+          month => g.Month,
+          month00 => g.Month.Pad00(),
+          month_latin_short => g.ToString("MMM", CultureInfo.CreateSpecificCulture(_resolver.Language)),
+          month_latin_long => g.ToString("MMMM", CultureInfo.CreateSpecificCulture(_resolver.Language)),
+
+          year => g.Year,
+
+        }.ToDictionary(e => e.Parameters[0].Name, e => new CompiledExpression(e)),
+
+
 
       }.ToDictionary(e => e.Parameters[0].Name, e => new CompiledExpression(e));
     }

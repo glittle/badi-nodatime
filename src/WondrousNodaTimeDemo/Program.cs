@@ -1,7 +1,9 @@
 ﻿using NodaTime;
 using System;
 using System.Linq;
+using System.Collections.Generic;
 using WondrousNodaTime;
+using WondrousNodaTime.Resources;
 
 namespace WondrousNodaTimeDemo
 {
@@ -29,11 +31,16 @@ namespace WondrousNodaTimeDemo
       Console.WriteLine($"There are {listing.Count} Feast and major Holy Days in 174.");
 
       var nawRuz = year174.GetSpecialDays(SpecialDayType.HolyDay_WorkSuspended, HolyDayCode.NawRuz).First();
-      Console.WriteLine($"Naw Ruz was on {nawRuz.Date.ToString("{W} ({G})")}");
+      Console.WriteLine($"Naw Ruz was on {nawRuz.Date.ToString()}");
 
-      var dt = new WondrousNodaTime.Utility.DateTemplateProcessor();
-      var list = dt.AvailableTokens;
-      list.ForEach(s=> Console.WriteLine($"<dt>{s}</dt><dd>{w2.ToString($"{{{s}}}")}</dd>"));
+
+      var dtp = new WondrousNodaTime.Utility.DateTemplateProcessor();
+      dtp.AvailableTokens(w2).ToList().ForEach(Console.WriteLine);
+
+      Console.WriteLine("\nGerman...");
+      var resolver = new WondrousResources("de");
+      dtp = new WondrousNodaTime.Utility.DateTemplateProcessor(resolver);
+      dtp.AvailableTokens(w2).ToList().ForEach(Console.WriteLine);
     }
   }
 }
