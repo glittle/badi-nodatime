@@ -15,7 +15,7 @@ namespace BadiNodaTime
   /// </summary>
   public class BadiYearInfo
   {
-    CalendarSystem _calendarSystem = CalendarSystem.Wondrous;
+    CalendarSystem _calendarSystem = CalendarSystem.Badi;
     int _year;
 
     static string _twinHolyBirthdaysCode =

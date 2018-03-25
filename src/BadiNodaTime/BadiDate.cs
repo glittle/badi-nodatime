@@ -29,11 +29,11 @@ namespace BadiNodaTime
     /// <param name="date"></param>
     public BadiDate(LocalDate date)
     {
-      if (date.Calendar == CalendarSystem.Wondrous)
+      if (date.Calendar == CalendarSystem.Badi)
       {
         _date = date;
       }
-      _date = date.WithCalendar(CalendarSystem.Wondrous);
+      _date = date.WithCalendar(CalendarSystem.Badi);
     }
 
 
@@ -44,7 +44,7 @@ namespace BadiNodaTime
     public BadiDate(DateTime dateTime)
     {
       var iso = new LocalDate(dateTime.Year, dateTime.Month, dateTime.Day);
-      _date = iso.WithCalendar(CalendarSystem.Wondrous);
+      _date = iso.WithCalendar(CalendarSystem.Badi);
     }
 
     /// <summary>
@@ -62,7 +62,7 @@ namespace BadiNodaTime
         month = Month18;
         day += DaysInMonth;
       }
-      _date = new LocalDate(year, month, day, CalendarSystem.Wondrous);
+      _date = new LocalDate(year, month, day, CalendarSystem.Badi);
     }
 
     /// <summary>

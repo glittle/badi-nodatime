@@ -22,7 +22,7 @@ namespace BadiNodaTime.Utility
     /// <param name="paramName"></param>
     public static void EnsureIsBadiCalendar(LocalDate date, string paramName)
     {
-      if (date.Calendar != CalendarSystem.Wondrous)
+      if (date.Calendar != CalendarSystem.Badi)
       {
         throw new ArgumentException("Can only be used with a LocalDate with the Badíʿ calendar system", paramName);
       }
