@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>GlenLittle.Wondrous.BadiNodaTime</PackageId>
+    <PackageId>GlenLittle.Badi.BadiNodaTime</PackageId>
     <Authors>Glen Little</Authors>
     <Company>Glen Little</Company>
     <Description>Badi Noda Time extends the Noda Time date API with features specific to the Badíʿ (Wondrous) calendar.</Description>
