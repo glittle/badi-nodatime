@@ -44,7 +44,17 @@ namespace BadiNodaTimeTest
       _resolver.GetString("HolyDay_" + code).ShouldEqual(name);
 
       var yi = new BadiYearInfo(174);
-      var holyDay = yi.GetSpecialDays(SpecialDayType.HolyDay_Other, code).First();
+      SpecialDayType specialDayType = new SpecialDayType();
+      if (code == HolyDayCode.BirthBab)
+      {
+        specialDayType = SpecialDayType.HolyDay_WorkSuspended;
+      }
+      else if (code == HolyDayCode.AscAbdul)
+      {
+        specialDayType = SpecialDayType.HolyDay_Other;
+      }
+
+      var holyDay = yi.GetSpecialDays(specialDayType, code).First();
 
       if (holyDay.TimeCode != SpecialTimeCode._NoCode_)
       {

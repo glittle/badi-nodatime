@@ -135,7 +135,7 @@ namespace BadiNodaTime
       return final
         .Where(sd =>
              holyDaysWanted == HolyDayCode._NoCode_
-          || !sd.DayType.HasFlag(SpecialDayType.HolyDay_WorkSuspended | SpecialDayType.HolyDay_Other)
+          || ((sd.DayType != SpecialDayType.HolyDay_WorkSuspended) && (sd.DayType != SpecialDayType.HolyDay_Other))
           || sd.DayCode.HasFlag(holyDaysWanted))
         .OrderBy(sd => sd.Date.LocalDate.DayOfYear)
         .ToList();
