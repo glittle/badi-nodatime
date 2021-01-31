@@ -103,5 +103,17 @@ namespace BadiNodaTimeTest
       hd2.TimeCode.ShouldEqual(SpecialTimeCode.H01);
       hd2.DayCode.ShouldEqual(HolyDayCode.AscAbdul);
     }
+
+    [Fact]
+    public void GetSpecialDays_HolyDaysWanted()
+    {
+        var yearInfo = new BadiYearInfo(174);
+
+        var specialDaysList = yearInfo.GetSpecialDays(SpecialDayType.HolyDay_WorkSuspended, HolyDayCode.NawRuz);
+        specialDaysList.Count().ShouldEqual(1);
+
+        specialDaysList = yearInfo.GetSpecialDays(SpecialDayType.HolyDay_WorkSuspended, HolyDayCode.Ridvan1);
+        specialDaysList.Count().ShouldEqual(1);
+    }
   }
 }
