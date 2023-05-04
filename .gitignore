@@ -47,3 +47,4 @@ BenchmarkDotNet.Artifacts
 
 # Temp files
 LocalNodaTime
+.fake
