@@ -132,13 +132,18 @@ namespace BadiNodaTime
         final.Add(new SpecialDay(new BadiDate(_year, 14, 6), HolyDayCode.AscAbdul, SpecialDayType.HolyDay_Other, SpecialTimeCode.H01));
       }
 
-      return final
-        .Where(sd =>
-             holyDaysWanted == HolyDayCode._NoCode_
-          || !sd.DayType.HasFlag(SpecialDayType.HolyDay_WorkSuspended | SpecialDayType.HolyDay_Other)
-          || sd.DayCode.HasFlag(holyDaysWanted))
+      List<SpecialDay> filteredSpecialDays = final
+        .Where(sd => holyDaysWanted == HolyDayCode._NoCode_ || MatchesHolyDayCriteria(sd))
         .OrderBy(sd => sd.Date.LocalDate.DayOfYear)
         .ToList();
+
+      bool MatchesHolyDayCriteria(SpecialDay sd)
+      {
+        return (!sd.DayType.HasFlag(SpecialDayType.HolyDay_WorkSuspended | SpecialDayType.HolyDay_Other)
+        && sd.DayCode.HasFlag(holyDaysWanted));
+      }
+
+      return filteredSpecialDays;
     }
   }
 }

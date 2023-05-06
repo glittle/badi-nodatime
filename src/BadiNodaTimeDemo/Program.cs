@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 using BadiNodaTime;
 using BadiNodaTime.Resources;
+using System.Security.Cryptography.X509Certificates;
 
 namespace BadiNodaTimeDemo
 {
@@ -41,6 +42,9 @@ namespace BadiNodaTimeDemo
       var resolver = new BadiResources("de");
       dtp = new BadiNodaTime.Utility.DateTemplateProcessor(resolver);
       dtp.AvailableTokens(w2).ToList().ForEach(Console.WriteLine);
+
+      UserInputDemo.SelectionDemo selectionDemo = new UserInputDemo.SelectionDemo();
+      selectionDemo.StartSelection();
     }
   }
 }
